@@ -32,9 +32,26 @@ find_package(spdlog REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(prometheus-cpp REQUIRED)
 find_package(OpenSSL REQUIRED)
-find_package(websocketpp REQUIRED)
+
+# Boost configuration
 find_package(Boost REQUIRED COMPONENTS system)
-find_package(nlohmann_json REQUIRED)
+if(NOT Boost_FOUND)
+    message(FATAL_ERROR "Boost not found")
+endif()
+
+# WebSocket++ and ASIO configuration
+add_definitions(-DBOOST_ERROR_CODE_HEADER_ONLY)
+add_definitions(-DBOOST_SYSTEM_NO_DEPRECATED)
+add_definitions(-DBOOST_ASIO_NO_DEPRECATED)
+add_definitions(-DBOOST_ALL_NO_LIB)
+add_definitions(-DASIO_STANDALONE)
+add_definitions(-DWEBSOCKETPP_USE_STANDALONE_ASIO)
+add_definitions(-DWEBSOCKETPP_USE_BOOST)
+add_definitions(-DBOOST_ASIO_HAS_STD_CHRONO)
+add_definitions(-DBOOST_ASIO_HAS_STD_ADDRESSOF)
+add_definitions(-DBOOST_ASIO_HAS_STD_ARRAY)
+add_definitions(-DBOOST_ASIO_HAS_STD_SHARED_PTR)
+add_definitions(-DBOOST_ASIO_HAS_STD_TYPE_TRAITS)
 
 # Include directories
 include_directories(
@@ -44,6 +61,8 @@ include_directories(
     ${PROMETHEUS_CPP_INCLUDE_DIRS}
     ${OPENSSL_INCLUDE_DIR}
     ${Boost_INCLUDE_DIRS}
+    ${Boost_INCLUDE_DIRS}/boost
+    /usr/include/websocketpp
 )
 
 # Add subdirectories
@@ -66,7 +85,6 @@ target_link_libraries(${PROJECT_NAME}
     prometheus-cpp::pull
     OpenSSL::SSL
     OpenSSL::Crypto
-    websocketpp
     ${Boost_LIBRARIES}
     Threads::Threads
     nlohmann_json::nlohmann_json

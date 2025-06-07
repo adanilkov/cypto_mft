@@ -1,10 +1,6 @@
 # Core library
 add_library(crypto_hft_core
-    # MarketDataEngine.cpp
-    # OrderBook.cpp
-    # ExecutionEngine.cpp
-    # RiskManager.cpp
-    # PositionManager.cpp
+    MarketDataEngine.cpp
 )
 
 # Link dependencies
@@ -16,7 +12,6 @@ target_link_libraries(crypto_hft_core
     prometheus-cpp::core
     OpenSSL::SSL
     OpenSSL::Crypto
-    websocketpp
     ${Boost_LIBRARIES}
     Threads::Threads
 )

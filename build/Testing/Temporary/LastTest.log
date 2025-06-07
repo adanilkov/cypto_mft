@@ -1,0 +1,209 @@
+Start testing: Jun 07 13:40 EDT
+----------------------------------------------------------
+1/2 Testing: unit_tests
+1/2 Test: unit_tests
+Command: "/home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit/unit_tests"
+Directory: /home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit
+"unit_tests" start time: Jun 07 13:40 EDT
+Output:
+----------------------------------------------------------
+[==========] Running 18 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from LoggerTest
+[ RUN      ] LoggerTest.BasicLogging
+Log file path: /tmp/crypto_hft_test.log
+[       OK ] LoggerTest.BasicLogging (103 ms)
+[ RUN      ] LoggerTest.MultiThreadedLogging
+Log file path: /tmp/crypto_hft_test.log
+[       OK ] LoggerTest.MultiThreadedLogging (106 ms)
+[ RUN      ] LoggerTest.LogLevels
+Log file path: /tmp/crypto_hft_test.log
+[       OK ] LoggerTest.LogLevels (102 ms)
+[----------] 3 tests from LoggerTest (312 ms total)
+
+[----------] 8 tests from ConfigManagerTest
+[ RUN      ] ConfigManagerTest.GetString
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.GetString (0 ms)
+[ RUN      ] ConfigManagerTest.GetInt
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.GetInt (0 ms)
+[ RUN      ] ConfigManagerTest.GetBool
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.GetBool (0 ms)
+[ RUN      ] ConfigManagerTest.GetDouble
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.GetDouble (0 ms)
+[ RUN      ] ConfigManagerTest.GetWithDefault
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.GetWithDefault (0 ms)
+[ RUN      ] ConfigManagerTest.MissingKeyThrows
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.MissingKeyThrows (0 ms)
+[ RUN      ] ConfigManagerTest.HasKey
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.HasKey (0 ms)
+[ RUN      ] ConfigManagerTest.Reload
+YAML file content written to: "/tmp/test_config.yaml"
+
+exchange:
+  binance:
+    api_key: "test_api_key_123"
+    max_orders: 100
+    testnet: true
+trading:
+  strategy: "momentum"
+  enabled: true
+risk:
+  max_leverage: 20
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.05
+
+[       OK ] ConfigManagerTest.Reload (0 ms)
+[----------] 8 tests from ConfigManagerTest (2 ms total)
+
+[----------] 7 tests from MockExchangeTest
+[ RUN      ] MockExchangeTest.BasicConnection
+[       OK ] MockExchangeTest.BasicConnection (0 ms)
+[ RUN      ] MockExchangeTest.MarketDataSubscription
+[       OK ] MockExchangeTest.MarketDataSubscription (0 ms)
+[ RUN      ] MockExchangeTest.OrderBookCallbacks
+[       OK ] MockExchangeTest.OrderBookCallbacks (101 ms)
+[ RUN      ] MockExchangeTest.OrderExecution
+[       OK ] MockExchangeTest.OrderExecution (200 ms)
+[ RUN      ] MockExchangeTest.OrderCancellation
+[       OK ] MockExchangeTest.OrderCancellation (103 ms)
+[ RUN      ] MockExchangeTest.MarketDataSimulation
+[       OK ] MockExchangeTest.MarketDataSimulation (153 ms)
+[ RUN      ] MockExchangeTest.AccountInformation
+[       OK ] MockExchangeTest.AccountInformation (0 ms)
+[----------] 7 tests from MockExchangeTest (559 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 3 test suites ran. (874 ms total)
+[  PASSED  ] 18 tests.
+<end of output>
+Test time =   0.88 sec
+----------------------------------------------------------
+Test Passed.
+"unit_tests" end time: Jun 07 13:40 EDT
+"unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: integration_tests
+2/2 Test: integration_tests
+Command: "/home/adanilkovas/projects/crypto/crypto-hft/build/tests/integration/integration_tests"
+Directory: /home/adanilkovas/projects/crypto/crypto-hft/build/tests/integration
+"integration_tests" start time: Jun 07 13:40 EDT
+Output:
+----------------------------------------------------------
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"integration_tests" end time: Jun 07 13:40 EDT
+"integration_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 07 13:40 EDT

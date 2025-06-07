@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcrypto_hft_infra.a CMakeFiles/crypto_hft_infra.dir/ConfigManager.cpp.o CMakeFiles/crypto_hft_infra.dir/Logger.cpp.o
+/usr/bin/ranlib libcrypto_hft_infra.a

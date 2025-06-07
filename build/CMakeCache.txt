@@ -399,9 +399,6 @@ fmt_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/fmt
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/nlohmann_json-build
 
-//The directory containing a CMake configuration file for nlohmann_json.
-nlohmann_json_DIR:PATH=/usr/lib/cmake/nlohmann_json
-
 //Value Computed by CMake
 nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
 
@@ -413,9 +410,6 @@ prometheus-cpp_DIR:PATH=/usr/local/lib/cmake/prometheus-cpp
 
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/spdlog
-
-//The directory containing a CMake configuration file for websocketpp.
-websocketpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/websocketpp
 
 //The directory containing a CMake configuration file for yaml-cpp.
 yaml-cpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/yaml-cpp
@@ -563,7 +557,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -626,8 +620,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcryp
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding ZLIB
 FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][v1.2.11()]
-//Details about finding nlohmann_json
-FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.10.5()]
 NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY
 OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1

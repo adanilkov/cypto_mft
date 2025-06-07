@@ -5,10 +5,24 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <websocketpp/client.hpp>
-#include <websocketpp/config/asio_client.hpp>
+#include <utility>
+#include <boost/beast/core.hpp>
+#include <boost/beast/ssl.hpp>
+#include <boost/beast/websocket.hpp>
+#include <boost/beast/websocket/ssl.hpp>
+#include <boost/asio/connect.hpp>
+#include <boost/asio/ip/tcp.hpp>
+#include <boost/asio/ssl/stream.hpp>
+#include <boost/system/error_code.hpp>
 #include <spdlog/spdlog.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
 #include <yaml-cpp/yaml.h>
+
+namespace beast = boost::beast;
+namespace websocket = beast::websocket;
+namespace net = boost::asio;
+namespace ssl = boost::asio::ssl;
+using tcp = boost::asio::ip::tcp;
 
 namespace crypto_hft {
 
@@ -57,9 +71,10 @@ private:
     YAML::Node config_;
     
     // WebSocket client
-    using WebSocketClient = websocketpp::client<websocketpp::config::asio_tls_client>;
-    std::unique_ptr<WebSocketClient> ws_client_;
-    websocketpp::connection_hdl ws_connection_;
+    net::io_context ioc_;
+    ssl::context ssl_ctx_{ssl::context::tlsv12_client};
+    std::unique_ptr<websocket::stream<beast::ssl_stream<tcp::socket>>> ws_;
+    bool connected_{false};
     
     // REST API endpoints
     std::string base_url_;
@@ -74,7 +89,7 @@ private:
     void load_config(const std::string& config_path);
     void validate_config() const;
     void setup_websocket();
-    void handle_websocket_message(websocketpp::connection_hdl hdl, WebSocketClient::message_ptr msg);
+    void handle_websocket_message(const std::string& message);
     std::string generate_signature(const std::string& timestamp, const std::string& method, 
                                  const std::string& request_path, const std::string& body) const;
     std::string make_request(const std::string& endpoint, const std::string& method, const std::string& body = "");

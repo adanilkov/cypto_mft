@@ -1,9 +1,6 @@
 # Models library
 add_library(crypto_hft_models
-    # SignalGenerator.cpp
-    # StrategyModel.cpp
-    # AlphaModel.cpp
-    # RiskModel.cpp
+    SignalGenerator.cpp
 )
 
 # Link dependencies

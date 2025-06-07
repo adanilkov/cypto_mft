@@ -6,6 +6,7 @@
 #include <memory>
 #include <optional>
 #include <cmath>
+#include <unordered_map>
 
 namespace crypto_hft {
 

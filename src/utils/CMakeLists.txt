@@ -1,8 +1,6 @@
 # Utils library
 add_library(crypto_hft_utils
-    # Types.cpp
-    # Constants.cpp
-    # Utils.cpp
+    utils.cpp
 )
 
 # Link dependencies

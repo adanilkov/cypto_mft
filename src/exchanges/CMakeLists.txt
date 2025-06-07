@@ -1,9 +1,8 @@
 # Exchanges library
 add_library(crypto_hft_exchanges
-    # BinanceAdapter.cpp
+    CoinbaseAdapter.cpp
     # BybitAdapter.cpp
     # OKXAdapter.cpp
-    # CoinbaseAdapter.cpp
     # KrakenAdapter.cpp
     # ExchangeUtils.cpp
 )
@@ -17,7 +16,6 @@ target_link_libraries(crypto_hft_exchanges
     yaml-cpp
     OpenSSL::SSL
     OpenSSL::Crypto
-    websocketpp
     Boost::system
 )
 

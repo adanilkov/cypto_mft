@@ -1,11 +1,7 @@
 # Infrastructure library
 add_library(crypto_hft_infra
-    # MetricsReporter.cpp
-    # ConfigManager.cpp
-    # Logger.cpp
-    # TimeSync.cpp
-    # Persistence.cpp
-    # ApiKeyManager.cpp
+    ConfigManager.cpp
+    Logger.cpp
 )
 
 # Link dependencies

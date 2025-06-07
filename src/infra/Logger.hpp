@@ -8,6 +8,8 @@
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/rotating_file_sink.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/async.h>
+#include <spdlog/async_logger.h>
 
 namespace crypto_hft {
 
@@ -17,37 +19,32 @@ public:
 
     // Initialize logger
     void initialize(const std::filesystem::path& logDir,
-                   const std::string& logLevel = "info");
+                   const std::string& logLevel = "info",
+                   bool use_async = true);
     
     // Logging methods
-    template<typename... Args>
-    void trace(const std::string& fmt, Args&&... args) {
-        logger_->trace(fmt, std::forward<Args>(args)...);
+    void trace(const std::string& msg) {
+        logger_->trace(msg);
     }
     
-    template<typename... Args>
-    void debug(const std::string& fmt, Args&&... args) {
-        logger_->debug(fmt, std::forward<Args>(args)...);
+    void debug(const std::string& msg) {
+        logger_->debug(msg);
     }
     
-    template<typename... Args>
-    void info(const std::string& fmt, Args&&... args) {
-        logger_->info(fmt, std::forward<Args>(args)...);
+    void info(const std::string& msg) {
+        logger_->info(msg);
     }
     
-    template<typename... Args>
-    void warn(const std::string& fmt, Args&&... args) {
-        logger_->warn(fmt, std::forward<Args>(args)...);
+    void warn(const std::string& msg) {
+        logger_->warn(msg);
     }
     
-    template<typename... Args>
-    void error(const std::string& fmt, Args&&... args) {
-        logger_->error(fmt, std::forward<Args>(args)...);
+    void error(const std::string& msg) {
+        logger_->error(msg);
     }
     
-    template<typename... Args>
-    void critical(const std::string& fmt, Args&&... args) {
-        logger_->critical(fmt, std::forward<Args>(args)...);
+    void critical(const std::string& msg) {
+        logger_->critical(msg);
     }
     
     // Set log level
@@ -58,7 +55,7 @@ public:
 
 private:
     Logger() = default;
-    ~Logger() = default;
+    ~Logger();  // Declare destructor but don't default it
     
     // Prevent copying
     Logger(const Logger&) = delete;
@@ -70,15 +67,16 @@ private:
     // Helper functions
     spdlog::level::level_enum getLogLevel(const std::string& level) const;
     void setupLogger(const std::filesystem::path& logDir,
-                    spdlog::level::level_enum level);
+                    spdlog::level::level_enum level,
+                    bool use_async);
 };
 
 // Convenience macros
-#define LOG_TRACE(...) Logger::getInstance().trace(__VA_ARGS__)
-#define LOG_DEBUG(...) Logger::getInstance().debug(__VA_ARGS__)
-#define LOG_INFO(...) Logger::getInstance().info(__VA_ARGS__)
-#define LOG_WARN(...) Logger::getInstance().warn(__VA_ARGS__)
-#define LOG_ERROR(...) Logger::getInstance().error(__VA_ARGS__)
-#define LOG_CRITICAL(...) Logger::getInstance().critical(__VA_ARGS__)
+#define LOG_TRACE(msg) Logger::getInstance().trace(msg)
+#define LOG_DEBUG(msg) Logger::getInstance().debug(msg)
+#define LOG_INFO(msg) Logger::getInstance().info(msg)
+#define LOG_WARN(msg) Logger::getInstance().warn(msg)
+#define LOG_ERROR(msg) Logger::getInstance().error(msg)
+#define LOG_CRITICAL(msg) Logger::getInstance().critical(msg)
 
 } // namespace crypto_hft 

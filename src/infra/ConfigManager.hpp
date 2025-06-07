@@ -23,6 +23,11 @@ public:
     double getDouble(const std::string& key) const;
     bool getBool(const std::string& key) const;
     
+    // Get configuration values with defaults
+    std::string getString(const std::string& key, const std::string& defaultValue) const;
+    int getInt(const std::string& key, int defaultValue) const;
+    bool getBool(const std::string& key, bool defaultValue) const;
+    
     // Template get method with default value
     template<typename T>
     T get(const std::string& key, const T& default_value) const {
@@ -67,6 +72,7 @@ public:
     bool saveConfig(const std::filesystem::path& configPath) const;
 
 private:
+    // Private constructor and destructor for singleton
     ConfigManager() = default;
     ~ConfigManager() = default;
     
