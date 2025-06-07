@@ -1,0 +1,2 @@
+"/usr/bin/gcc-ar-13" cr libcore.a CMakeFiles/core.dir/core.cpp.o
+"/usr/bin/gcc-ranlib-13" libcore.a
