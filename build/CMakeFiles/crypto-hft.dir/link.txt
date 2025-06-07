@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -O3 -flto -fno-fat-lto-objects CMakeFiles/crypto-hft.dir/src/main.cpp.o -o crypto-hft  src/core/libcore.a src/exchanges/libexchanges.a src/infra/libinfra.a src/models/libmodels.a src/utils/libutils.a _deps/spdlog-build/libspdlog.a _deps/yaml-cpp-build/libyaml-cpp.a src/core/libcore.a _deps/spdlog-build/libspdlog.a 

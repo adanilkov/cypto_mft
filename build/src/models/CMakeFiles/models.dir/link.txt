@@ -1,2 +1,0 @@
-"/usr/bin/gcc-ar-13" cr libmodels.a CMakeFiles/models.dir/models.cpp.o
-"/usr/bin/gcc-ranlib-13" libmodels.a

@@ -14,7 +14,7 @@ protected:
     void SetUp() override {
         // Create temporary log file
         log_file_ = std::filesystem::temp_directory_path() / "crypto_hft_test.log";
-        Logger::getInstance().init(log_file_.string());
+        Logger::getInstance().initialize(log_file_.string());
     }
 
     void TearDown() override {

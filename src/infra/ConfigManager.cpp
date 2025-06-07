@@ -4,16 +4,24 @@
 
 namespace crypto_hft {
 
-void ConfigManager::load(const std::string& filename) {
-    config_file_ = filename;
-    reload();
+ConfigManager& ConfigManager::getInstance() {
+    static ConfigManager instance;
+    return instance;
+}
+
+bool ConfigManager::loadConfig(const std::filesystem::path& configPath) {
+    try {
+        config_ = YAML::LoadFile(configPath.string());
+        configPath_ = configPath;
+        return true;
+    } catch (const YAML::Exception& e) {
+        throw std::runtime_error("Failed to load config file: " + std::string(e.what()));
+    }
 }
 
 void ConfigManager::reload() {
-    try {
-        config_ = YAML::LoadFile(config_file_);
-    } catch (const YAML::Exception& e) {
-        throw std::runtime_error("Failed to load config file: " + std::string(e.what()));
+    if (!configPath_.empty()) {
+        loadConfig(configPath_);
     }
 }
 

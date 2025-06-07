@@ -1,0 +1,99 @@
+# Exchange configurations
+exchanges:
+  binance:
+    enabled: true
+    api_key: ""  # Set in environment or secure storage
+    api_secret: ""  # Set in environment or secure storage
+    testnet: false
+    websocket_url: "wss://stream.binance.com:9443/ws"
+    rest_url: "https://api.binance.com"
+    symbols:
+      - "BTCUSDT"
+      - "ETHUSDT"
+      - "BNBUSDT"
+    rate_limit:
+      requests_per_second: 10
+      max_orders_per_second: 5
+
+  coinbase:
+    enabled: false
+    api_key: ""
+    api_secret: ""
+    passphrase: ""
+    websocket_url: "wss://ws-feed.pro.coinbase.com"
+    rest_url: "https://api.pro.coinbase.com"
+    symbols:
+      - "BTC-USD"
+      - "ETH-USD"
+    rate_limit:
+      requests_per_second: 3
+      max_orders_per_second: 2
+
+  kraken:
+    enabled: false
+    api_key: ""
+    api_secret: ""
+    websocket_url: "wss://ws.kraken.com"
+    rest_url: "https://api.kraken.com"
+    symbols:
+      - "XBT/USD"
+      - "ETH/USD"
+    rate_limit:
+      requests_per_second: 15
+      max_orders_per_second: 8
+
+# Trading parameters
+trading:
+  strategy: "statistical_arbitrage"
+  pairs:
+    - symbol1: "BTCUSDT"
+      symbol2: "ETHUSDT"
+      beta: 0.05  # Initial beta for Kalman filter
+      z_entry: 2.0
+      z_exit: 0.5
+      window_size: 1000  # For rolling statistics
+  position_sizing:
+    max_position_size: 1.0  # BTC
+    max_leverage: 3.0
+    risk_per_trade: 0.02  # 2% of capital
+
+# Risk management
+risk:
+  max_drawdown: 0.1  # 10% maximum drawdown
+  max_daily_loss: 0.05  # 5% maximum daily loss
+  max_exposure: 0.3  # 30% maximum total exposure
+  max_concentration: 0.2  # 20% maximum concentration in a single symbol
+  circuit_breakers:
+    max_price_change: 0.1  # 10% maximum price change in 1 second
+    max_volume_spike: 5.0  # 5x normal volume
+
+# Infrastructure
+infra:
+  logging:
+    level: "info"
+    file: "logs/crypto_hft.log"
+    max_size: 10485760  # 10MB
+    max_files: 3
+  metrics:
+    enabled: true
+    host: "localhost"
+    port: 9090
+    push_interval: 15  # seconds
+  persistence:
+    enabled: true
+    directory: "data/persistence"
+    snapshot_interval: 60  # seconds
+  time_sync:
+    enabled: true
+    ntp_server: "pool.ntp.org"
+    sync_interval: 300  # seconds
+
+# Backtesting
+backtesting:
+  enabled: false
+  start_date: "2023-01-01"
+  end_date: "2023-12-31"
+  data_directory: "data/historical"
+  commission: 0.001  # 0.1% per trade
+  slippage: 0.0005  # 0.05% slippage
+  initial_capital: 100000  # USD 

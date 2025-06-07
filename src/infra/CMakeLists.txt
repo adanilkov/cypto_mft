@@ -1,15 +1,27 @@
-add_library(infra
-    ConfigManager.cpp
-    Logger.cpp
+# Infrastructure library
+add_library(crypto_hft_infra
+    # MetricsReporter.cpp
+    # ConfigManager.cpp
+    # Logger.cpp
+    # TimeSync.cpp
+    # Persistence.cpp
+    # ApiKeyManager.cpp
 )
 
-target_include_directories(infra
+# Link dependencies
+target_link_libraries(crypto_hft_infra
+    PRIVATE
+    crypto_hft_utils
+    spdlog::spdlog
+    yaml-cpp
+    prometheus-cpp::core
+    prometheus-cpp::pull
+    OpenSSL::SSL
+    OpenSSL::Crypto
+)
+
+# Include directories
+target_include_directories(crypto_hft_infra
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
-target_link_libraries(infra
-    PUBLIC
-    yaml-cpp
-    spdlog::spdlog
 ) 

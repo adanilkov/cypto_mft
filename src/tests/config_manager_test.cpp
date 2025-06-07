@@ -10,10 +10,14 @@ class ConfigManagerTest : public ::testing::Test {
 protected:
     void SetUp() override {
         // Use the config file from the build directory
-        config_manager_.load("test_config.yaml");
+        ConfigManager::getInstance().loadConfig("test_config.yaml");
     }
 
-    ConfigManager config_manager_;
+    void TearDown() override {}
+
+    virtual ~ConfigManagerTest() = default;
+
+    ConfigManager& config_manager_ = ConfigManager::getInstance();
 };
 
 TEST_F(ConfigManagerTest, GetString) {

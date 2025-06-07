@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -O3 -flto -fno-fat-lto-objects CMakeFiles/infra_tests.dir/config_manager_test.cpp.o CMakeFiles/infra_tests.dir/logger_test.cpp.o -o infra_tests  ../infra/libinfra.a ../../lib/libgtest_main.a ../../lib/libgmock_main.a ../../_deps/yaml-cpp-build/libyaml-cpp.a ../../_deps/spdlog-build/libspdlog.a ../../lib/libgmock.a ../../lib/libgtest.a 

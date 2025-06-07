@@ -1,2 +1,0 @@
-"/usr/bin/gcc-ar-13" cr libinfra.a CMakeFiles/infra.dir/ConfigManager.cpp.o CMakeFiles/infra.dir/Logger.cpp.o
-"/usr/bin/gcc-ranlib-13" libinfra.a
