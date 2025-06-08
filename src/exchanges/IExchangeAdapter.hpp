@@ -4,6 +4,7 @@
 #include <vector>
 #include <functional>
 #include <memory>
+#include "../utils/utils.hpp"
 
 namespace crypto_hft {
 
@@ -42,7 +43,7 @@ struct OrderRequest {
 struct OrderResponse {
     std::string orderId;
     std::string clientOrderId;
-    std::string status;  // NEW, PARTIALLY_FILLED, FILLED, CANCELED, REJECTED
+    utils::OrderStatus status;  // Using fully qualified enum name
     double filledAmount;
     double fillPrice;
     int64_t timestamp;

@@ -185,6 +185,175 @@ crypto-hft/fast:
 .PHONY : crypto-hft/fast
 
 #=============================================================================
+# Target rules for targets named print-claims
+
+# Build rule for target.
+print-claims: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 print-claims
+.PHONY : print-claims
+
+# fast build rule for target.
+print-claims/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/print-claims.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/print-claims.dir/build
+.PHONY : print-claims/fast
+
+#=============================================================================
+# Target rules for targets named print-claims-run
+
+# Build rule for target.
+print-claims-run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 print-claims-run
+.PHONY : print-claims-run
+
+# fast build rule for target.
+print-claims-run/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/print-claims-run.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/print-claims-run.dir/build
+.PHONY : print-claims-run/fast
+
+#=============================================================================
+# Target rules for targets named private-claims
+
+# Build rule for target.
+private-claims: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 private-claims
+.PHONY : private-claims
+
+# fast build rule for target.
+private-claims/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/private-claims.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/private-claims.dir/build
+.PHONY : private-claims/fast
+
+#=============================================================================
+# Target rules for targets named private-claims-run
+
+# Build rule for target.
+private-claims-run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 private-claims-run
+.PHONY : private-claims-run
+
+# fast build rule for target.
+private-claims-run/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/private-claims-run.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/private-claims-run.dir/build
+.PHONY : private-claims-run/fast
+
+#=============================================================================
+# Target rules for targets named rsa-create
+
+# Build rule for target.
+rsa-create: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rsa-create
+.PHONY : rsa-create
+
+# fast build rule for target.
+rsa-create/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/rsa-create.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/rsa-create.dir/build
+.PHONY : rsa-create/fast
+
+#=============================================================================
+# Target rules for targets named rsa-create-run
+
+# Build rule for target.
+rsa-create-run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rsa-create-run
+.PHONY : rsa-create-run
+
+# fast build rule for target.
+rsa-create-run/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/rsa-create-run.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/rsa-create-run.dir/build
+.PHONY : rsa-create-run/fast
+
+#=============================================================================
+# Target rules for targets named rsa-verify
+
+# Build rule for target.
+rsa-verify: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rsa-verify
+.PHONY : rsa-verify
+
+# fast build rule for target.
+rsa-verify/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/rsa-verify.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/rsa-verify.dir/build
+.PHONY : rsa-verify/fast
+
+#=============================================================================
+# Target rules for targets named rsa-verify-run
+
+# Build rule for target.
+rsa-verify-run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rsa-verify-run
+.PHONY : rsa-verify-run
+
+# fast build rule for target.
+rsa-verify-run/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/rsa-verify-run.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/rsa-verify-run.dir/build
+.PHONY : rsa-verify-run/fast
+
+#=============================================================================
+# Target rules for targets named jwks-verify
+
+# Build rule for target.
+jwks-verify: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 jwks-verify
+.PHONY : jwks-verify
+
+# fast build rule for target.
+jwks-verify/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/jwks-verify.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/jwks-verify.dir/build
+.PHONY : jwks-verify/fast
+
+#=============================================================================
+# Target rules for targets named jwks-verify-run
+
+# Build rule for target.
+jwks-verify-run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 jwks-verify-run
+.PHONY : jwks-verify-run
+
+# fast build rule for target.
+jwks-verify-run/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/jwks-verify-run.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/jwks-verify-run.dir/build
+.PHONY : jwks-verify-run/fast
+
+#=============================================================================
+# Target rules for targets named es256k
+
+# Build rule for target.
+es256k: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 es256k
+.PHONY : es256k
+
+# fast build rule for target.
+es256k/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/es256k.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/es256k.dir/build
+.PHONY : es256k/fast
+
+#=============================================================================
+# Target rules for targets named partial-claim-verifier
+
+# Build rule for target.
+partial-claim-verifier: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 partial-claim-verifier
+.PHONY : partial-claim-verifier
+
+# fast build rule for target.
+partial-claim-verifier/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/CMakeFiles/partial-claim-verifier.dir/build.make _deps/jwt-cpp-build/example/CMakeFiles/partial-claim-verifier.dir/build
+.PHONY : partial-claim-verifier/fast
+
+#=============================================================================
+# Target rules for targets named nlohmann-json
+
+# Build rule for target.
+nlohmann-json: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nlohmann-json
+.PHONY : nlohmann-json
+
+# fast build rule for target.
+nlohmann-json/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/jwt-cpp-build/example/traits/CMakeFiles/nlohmann-json.dir/build.make _deps/jwt-cpp-build/example/traits/CMakeFiles/nlohmann-json.dir/build
+.PHONY : nlohmann-json/fast
+
+#=============================================================================
 # Target rules for targets named crypto_hft_core
 
 # Build rule for target.
@@ -312,13 +481,26 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... jwks-verify-run"
+	@echo "... print-claims-run"
+	@echo "... private-claims-run"
+	@echo "... rsa-create-run"
+	@echo "... rsa-verify-run"
 	@echo "... crypto-hft"
 	@echo "... crypto_hft_core"
 	@echo "... crypto_hft_exchanges"
 	@echo "... crypto_hft_infra"
 	@echo "... crypto_hft_models"
 	@echo "... crypto_hft_utils"
+	@echo "... es256k"
 	@echo "... integration_tests"
+	@echo "... jwks-verify"
+	@echo "... nlohmann-json"
+	@echo "... partial-claim-verifier"
+	@echo "... print-claims"
+	@echo "... private-claims"
+	@echo "... rsa-create"
+	@echo "... rsa-verify"
 	@echo "... unit_tests"
 	@echo "... src/main.o"
 	@echo "... src/main.i"

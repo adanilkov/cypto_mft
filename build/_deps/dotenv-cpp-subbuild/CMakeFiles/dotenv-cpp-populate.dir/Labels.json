@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/CMakeFiles/dotenv-cpp-populate"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/CMakeFiles/dotenv-cpp-populate.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/CMakeFiles/dotenv-cpp-populate-complete.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-build.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-configure.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-download.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-install.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-patch.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-test.rule"
+		},
+		{
+			"file" : "/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/dotenv-cpp-subbuild/dotenv-cpp-populate-prefix/src/dotenv-cpp-populate-stamp/dotenv-cpp-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"dotenv-cpp-populate"
+		],
+		"name" : "dotenv-cpp-populate"
+	}
+}

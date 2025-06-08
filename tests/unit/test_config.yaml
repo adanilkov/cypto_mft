@@ -26,4 +26,9 @@ database:
   port: 5432
   name: "crypto_hft"
   user: "postgres"
-  password: "test_password" 
+  password: "test_password"
+
+# Test configuration for Coinbase
+websocket_url: "wss://advanced-trade-ws.coinbase.com"
+api_key: "b30a063a-0d1a-4bdd-a356-f2cd69125d5c"
+api_secret: "Sx20uuLJlcCzJ24CQVbka/W1bKF36iBgdE9QcRzewJttkSzdNuje4dJnj2R/GKVIo0mpkbpGu1iSfrFKkHZZNA=="

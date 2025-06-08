@@ -71,5 +71,8 @@ struct ExecReport {
     std::chrono::system_clock::time_point timestamp;
 };
 
+bool load_env_file(const std::string& path = ".env");
+std::string coinbase_create_jwt();
+
 } // namespace utils
 } // namespace crypto_hft 

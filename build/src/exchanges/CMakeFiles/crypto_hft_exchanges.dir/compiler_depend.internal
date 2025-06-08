@@ -267,8 +267,34 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/c++/13/bits/ranges_algobase.h
  /usr/include/c++/13/pstl/glue_memory_defs.h
  /usr/include/c++/13/pstl/execution_defs.h
- /usr/include/c++/13/utility
- /usr/include/c++/13/bits/stl_relops.h
+ /home/adanilkovas/projects/crypto/crypto-hft/src/utils/utils.hpp
+ /usr/include/c++/13/chrono
+ /usr/include/c++/13/bits/chrono.h
+ /usr/include/c++/13/ratio
+ /usr/include/c++/13/cstdint
+ /usr/include/c++/13/limits
+ /usr/include/c++/13/ctime
+ /usr/include/c++/13/bits/parse_numbers.h
+ /usr/include/c++/13/sstream
+ /usr/include/c++/13/istream
+ /usr/include/c++/13/bits/istream.tcc
+ /usr/include/c++/13/bits/sstream.tcc
+ /usr/include/c++/13/bits/chrono_io.h
+ /usr/include/c++/13/iomanip
+ /usr/include/c++/13/locale
+ /usr/include/c++/13/bits/locale_facets_nonio.h
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h
+ /usr/include/libintl.h
+ /usr/include/c++/13/bits/codecvt.h
+ /usr/include/c++/13/bits/locale_facets_nonio.tcc
+ /usr/include/c++/13/bits/locale_conv.h
+ /usr/include/c++/13/bits/quoted_string.h
+ /usr/include/c++/13/format
+ /usr/include/c++/13/charconv
+ /usr/include/c++/13/optional
+ /usr/include/c++/13/span
+ /usr/include/c++/13/variant
  /usr/include/boost/beast/core.hpp
  /usr/include/boost/beast/core/detail/config.hpp
  /usr/include/boost/config.hpp
@@ -310,12 +336,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/c++/13/bits/stl_map.h
  /usr/include/c++/13/bits/stl_multimap.h
  /usr/include/c++/13/mutex
- /usr/include/c++/13/bits/chrono.h
- /usr/include/c++/13/ratio
- /usr/include/c++/13/cstdint
- /usr/include/c++/13/limits
- /usr/include/c++/13/ctime
- /usr/include/c++/13/bits/parse_numbers.h
  /usr/include/c++/13/bits/unique_lock.h
  /usr/include/boost/system/system_error.hpp
  /usr/include/c++/13/cassert
@@ -344,6 +364,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/boost/mp11/detail/mp_remove_if.hpp
  /usr/include/boost/mp11/detail/mp_map_find.hpp
  /usr/include/boost/mp11/detail/mp_with_index.hpp
+ /usr/include/c++/13/utility
+ /usr/include/c++/13/bits/stl_relops.h
  /usr/include/boost/type_traits/remove_cv.hpp
  /usr/include/boost/type_traits/copy_cv.hpp
  /usr/include/boost/type_traits/is_const.hpp
@@ -852,10 +874,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/boost/date_time/adjust_functors.hpp
  /usr/include/boost/date_time/wrapping_int.hpp
  /usr/include/boost/date_time/date_generators.hpp
- /usr/include/c++/13/sstream
- /usr/include/c++/13/istream
- /usr/include/c++/13/bits/istream.tcc
- /usr/include/c++/13/bits/sstream.tcc
  /usr/include/boost/date_time/date_clock_device.hpp
  /usr/include/boost/date_time/date_iterator.hpp
  /usr/include/boost/date_time/time_system_split.hpp
@@ -999,23 +1017,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/boost/asio/io_context.hpp
  /usr/include/boost/asio/detail/wrapped_handler.hpp
  /usr/include/boost/asio/detail/chrono.hpp
- /usr/include/c++/13/chrono
- /usr/include/c++/13/bits/chrono_io.h
- /usr/include/c++/13/iomanip
- /usr/include/c++/13/locale
- /usr/include/c++/13/bits/locale_facets_nonio.h
- /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h
- /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h
- /usr/include/libintl.h
- /usr/include/c++/13/bits/codecvt.h
- /usr/include/c++/13/bits/locale_facets_nonio.tcc
- /usr/include/c++/13/bits/locale_conv.h
- /usr/include/c++/13/bits/quoted_string.h
- /usr/include/c++/13/format
- /usr/include/c++/13/charconv
- /usr/include/c++/13/optional
- /usr/include/c++/13/span
- /usr/include/c++/13/variant
  /usr/include/boost/asio/impl/io_context.hpp
  /usr/include/boost/asio/detail/completion_handler.hpp
  /usr/include/boost/asio/impl/io_context.ipp
@@ -1585,6 +1586,102 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/boost/beast/websocket/impl/read.hpp
  /usr/include/boost/beast/websocket/impl/stream.hpp
  /usr/include/boost/beast/websocket/impl/write.hpp
+ /usr/include/boost/beast/http.hpp
+ /usr/include/boost/beast/http/basic_dynamic_body.hpp
+ /usr/include/boost/beast/http/basic_file_body.hpp
+ /usr/include/boost/beast/http/buffer_body.hpp
+ /usr/include/boost/beast/http/dynamic_body.hpp
+ /usr/include/boost/beast/http/file_body.hpp
+ /usr/include/boost/beast/http/impl/file_body_win32.hpp
+ /usr/include/boost/beast/http/span_body.hpp
+ /usr/include/boost/beast/http/vector_body.hpp
+ /usr/include/nlohmann/json.hpp
+ /usr/include/nlohmann/adl_serializer.hpp
+ /usr/include/nlohmann/detail/conversions/from_json.hpp
+ /usr/include/c++/13/forward_list
+ /usr/include/c++/13/bits/forward_list.h
+ /usr/include/c++/13/bits/forward_list.tcc
+ /usr/include/c++/13/valarray
+ /usr/include/c++/13/bits/valarray_array.h
+ /usr/include/c++/13/bits/valarray_array.tcc
+ /usr/include/c++/13/bits/valarray_before.h
+ /usr/include/c++/13/bits/slice_array.h
+ /usr/include/c++/13/bits/valarray_after.h
+ /usr/include/c++/13/bits/gslice.h
+ /usr/include/c++/13/bits/gslice_array.h
+ /usr/include/c++/13/bits/mask_array.h
+ /usr/include/c++/13/bits/indirect_array.h
+ /usr/include/nlohmann/detail/exceptions.hpp
+ /usr/include/nlohmann/detail/value_t.hpp
+ /usr/include/nlohmann/detail/string_escape.hpp
+ /usr/include/nlohmann/detail/macro_scope.hpp
+ /usr/include/nlohmann/thirdparty/hedley/hedley.hpp
+ /usr/include/nlohmann/detail/meta/detected.hpp
+ /usr/include/nlohmann/detail/meta/void_t.hpp
+ /usr/include/nlohmann/detail/input/position_t.hpp
+ /usr/include/nlohmann/detail/meta/cpp_future.hpp
+ /usr/include/nlohmann/detail/meta/identity_tag.hpp
+ /usr/include/nlohmann/detail/meta/type_traits.hpp
+ /usr/include/nlohmann/detail/iterators/iterator_traits.hpp
+ /usr/include/nlohmann/detail/meta/call_std/begin.hpp
+ /usr/include/nlohmann/detail/meta/call_std/end.hpp
+ /usr/include/nlohmann/json_fwd.hpp
+ /usr/include/c++/13/filesystem
+ /usr/include/c++/13/bits/fs_fwd.h
+ /usr/include/c++/13/bits/fs_path.h
+ /usr/include/c++/13/codecvt
+ /usr/include/c++/13/bits/fs_dir.h
+ /usr/include/c++/13/bits/fs_ops.h
+ /usr/include/nlohmann/detail/conversions/to_json.hpp
+ /usr/include/nlohmann/detail/iterators/iteration_proxy.hpp
+ /usr/include/nlohmann/byte_container_with_subtype.hpp
+ /usr/include/nlohmann/detail/hash.hpp
+ /usr/include/nlohmann/detail/input/binary_reader.hpp
+ /usr/include/nlohmann/detail/input/input_adapters.hpp
+ /usr/include/nlohmann/detail/input/json_sax.hpp
+ /usr/include/nlohmann/detail/input/lexer.hpp
+ /usr/include/nlohmann/detail/meta/is_sax.hpp
+ /usr/include/nlohmann/detail/input/parser.hpp
+ /usr/include/nlohmann/detail/iterators/internal_iterator.hpp
+ /usr/include/nlohmann/detail/iterators/primitive_iterator.hpp
+ /usr/include/nlohmann/detail/iterators/iter_impl.hpp
+ /usr/include/nlohmann/detail/iterators/json_reverse_iterator.hpp
+ /usr/include/nlohmann/detail/json_pointer.hpp
+ /usr/include/nlohmann/detail/json_ref.hpp
+ /usr/include/nlohmann/detail/output/binary_writer.hpp
+ /usr/include/nlohmann/detail/output/output_adapters.hpp
+ /usr/include/nlohmann/detail/output/serializer.hpp
+ /usr/include/nlohmann/detail/conversions/to_chars.hpp
+ /usr/include/nlohmann/ordered_map.hpp
+ /usr/include/nlohmann/detail/macro_unscope.hpp
+ /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
+ /usr/include/c++/13/thread
+ /usr/include/c++/13/stop_token
+ /usr/include/c++/13/bits/std_thread.h
+ /usr/include/c++/13/semaphore
+ /usr/include/c++/13/bits/semaphore_base.h
+ /usr/include/c++/13/bits/atomic_timed_wait.h
+ /usr/include/c++/13/bits/this_thread_sleep.h
+ /usr/include/semaphore.h
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h
+ /usr/include/c++/13/condition_variable
+ /usr/include/c++/13/queue
+ /usr/include/c++/13/deque
+ /usr/include/c++/13/bits/stl_deque.h
+ /usr/include/c++/13/bits/deque.tcc
+ /usr/include/c++/13/bits/stl_queue.h
+ /usr/include/boost/asio/strand.hpp
+ /usr/include/boost/asio/detail/strand_executor_service.hpp
+ /usr/include/boost/asio/detail/impl/strand_executor_service.hpp
+ /usr/include/boost/asio/defer.hpp
+ /usr/include/boost/asio/impl/defer.hpp
+ /usr/include/boost/asio/dispatch.hpp
+ /usr/include/boost/asio/impl/dispatch.hpp
+ /usr/include/boost/asio/detail/impl/strand_executor_service.ipp
+ /usr/include/boost/asio/io_context_strand.hpp
+ /usr/include/boost/asio/detail/strand_service.hpp
+ /usr/include/boost/asio/detail/impl/strand_service.hpp
+ /usr/include/boost/asio/detail/impl/strand_service.ipp
  /usr/include/spdlog/spdlog.h
  /usr/include/spdlog/common.h
  /usr/include/spdlog/tweakme.h
@@ -1643,4 +1740,16 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
  /usr/include/yaml-cpp/node/detail/impl.h
  /usr/include/yaml-cpp/node/parse.h
  /usr/include/yaml-cpp/node/emit.h
+ /home/adanilkovas/projects/crypto/crypto-hft/external/include/jwt-cpp/jwt.h
+ /home/adanilkovas/projects/crypto/crypto-hft/external/include/picojson/picojson.h
+ /usr/include/c++/13/iostream
+ /usr/include/c++/13/cinttypes
+ /usr/include/inttypes.h
+ /home/adanilkovas/projects/crypto/crypto-hft/external/include/jwt-cpp/base.h
+ /usr/include/openssl/ecdsa.h
+ /usr/include/c++/13/experimental/type_traits
+ /usr/include/c++/13/experimental/bits/lfts_config.h
+ /usr/include/openssl/param_build.h
+ /home/adanilkovas/projects/crypto/crypto-hft/external/include/jwt-cpp/traits/kazuho-picojson/defaults.h
+ /home/adanilkovas/projects/crypto/crypto-hft/external/include/jwt-cpp/traits/kazuho-picojson/traits.h
 

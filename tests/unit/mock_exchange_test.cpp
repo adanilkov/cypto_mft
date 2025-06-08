@@ -92,9 +92,9 @@ TEST_F(MockExchangeTest, OrderExecution) {
     adapter_->registerExecutionCallback([&](const OrderResponse& response) {
         std::lock_guard<std::mutex> lock(callback_mutex_);
         received_executions_.push_back(response);
-        if (response.status == "NEW") {
+        if (response.status == utils::OrderStatus::NEW) {
             execution_received = true;
-        } else if (response.status == "FILLED") {
+        } else if (response.status == utils::OrderStatus::FILLED) {
             fill_received = true;
         }
     });
@@ -117,8 +117,8 @@ TEST_F(MockExchangeTest, OrderExecution) {
     EXPECT_TRUE(execution_received);
     EXPECT_TRUE(fill_received);
     EXPECT_EQ(received_executions_.size(), 2);
-    EXPECT_EQ(received_executions_[0].status, "NEW");
-    EXPECT_EQ(received_executions_[1].status, "FILLED");
+    EXPECT_EQ(received_executions_[0].status, utils::OrderStatus::NEW);
+    EXPECT_EQ(received_executions_[1].status, utils::OrderStatus::FILLED);
     EXPECT_EQ(received_executions_[1].filledAmount, 1.0);
     EXPECT_EQ(received_executions_[1].fillPrice, 50000.0);
 }
@@ -129,7 +129,7 @@ TEST_F(MockExchangeTest, OrderCancellation) {
     adapter_->registerExecutionCallback([&](const OrderResponse& response) {
         std::lock_guard<std::mutex> lock(callback_mutex_);
         received_executions_.push_back(response);
-        if (response.status == "CANCELED") {
+        if (response.status == utils::OrderStatus::CANCELED) {
             cancel_received = true;
         }
     });
@@ -153,7 +153,7 @@ TEST_F(MockExchangeTest, OrderCancellation) {
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     EXPECT_TRUE(cancel_received);
-    EXPECT_EQ(received_executions_.back().status, "CANCELED");
+    EXPECT_EQ(received_executions_.back().status, utils::OrderStatus::CANCELED);
 }
 
 TEST_F(MockExchangeTest, MarketDataSimulation) {

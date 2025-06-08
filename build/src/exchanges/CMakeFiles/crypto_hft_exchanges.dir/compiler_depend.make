@@ -266,8 +266,34 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/c++/13/bits/ranges_algobase.h \
   /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/execution_defs.h \
-  /usr/include/c++/13/utility \
-  /usr/include/c++/13/bits/stl_relops.h \
+  ../src/utils/utils.hpp \
+  /usr/include/c++/13/chrono \
+  /usr/include/c++/13/bits/chrono.h \
+  /usr/include/c++/13/ratio \
+  /usr/include/c++/13/cstdint \
+  /usr/include/c++/13/limits \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/bits/parse_numbers.h \
+  /usr/include/c++/13/sstream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/sstream.tcc \
+  /usr/include/c++/13/bits/chrono_io.h \
+  /usr/include/c++/13/iomanip \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/codecvt.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
+  /usr/include/c++/13/bits/quoted_string.h \
+  /usr/include/c++/13/format \
+  /usr/include/c++/13/charconv \
+  /usr/include/c++/13/optional \
+  /usr/include/c++/13/span \
+  /usr/include/c++/13/variant \
   /usr/include/boost/beast/core.hpp \
   /usr/include/boost/beast/core/detail/config.hpp \
   /usr/include/boost/config.hpp \
@@ -309,12 +335,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/mutex \
-  /usr/include/c++/13/bits/chrono.h \
-  /usr/include/c++/13/ratio \
-  /usr/include/c++/13/cstdint \
-  /usr/include/c++/13/limits \
-  /usr/include/c++/13/ctime \
-  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/boost/system/system_error.hpp \
   /usr/include/c++/13/cassert \
@@ -343,6 +363,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/boost/mp11/detail/mp_remove_if.hpp \
   /usr/include/boost/mp11/detail/mp_map_find.hpp \
   /usr/include/boost/mp11/detail/mp_with_index.hpp \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/boost/type_traits/remove_cv.hpp \
   /usr/include/boost/type_traits/copy_cv.hpp \
   /usr/include/boost/type_traits/is_const.hpp \
@@ -851,10 +873,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/boost/date_time/adjust_functors.hpp \
   /usr/include/boost/date_time/wrapping_int.hpp \
   /usr/include/boost/date_time/date_generators.hpp \
-  /usr/include/c++/13/sstream \
-  /usr/include/c++/13/istream \
-  /usr/include/c++/13/bits/istream.tcc \
-  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/boost/date_time/date_clock_device.hpp \
   /usr/include/boost/date_time/date_iterator.hpp \
   /usr/include/boost/date_time/time_system_split.hpp \
@@ -998,23 +1016,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/boost/asio/io_context.hpp \
   /usr/include/boost/asio/detail/wrapped_handler.hpp \
   /usr/include/boost/asio/detail/chrono.hpp \
-  /usr/include/c++/13/chrono \
-  /usr/include/c++/13/bits/chrono_io.h \
-  /usr/include/c++/13/iomanip \
-  /usr/include/c++/13/locale \
-  /usr/include/c++/13/bits/locale_facets_nonio.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/13/bits/codecvt.h \
-  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/13/bits/locale_conv.h \
-  /usr/include/c++/13/bits/quoted_string.h \
-  /usr/include/c++/13/format \
-  /usr/include/c++/13/charconv \
-  /usr/include/c++/13/optional \
-  /usr/include/c++/13/span \
-  /usr/include/c++/13/variant \
   /usr/include/boost/asio/impl/io_context.hpp \
   /usr/include/boost/asio/detail/completion_handler.hpp \
   /usr/include/boost/asio/impl/io_context.ipp \
@@ -1584,6 +1585,102 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/boost/beast/websocket/impl/read.hpp \
   /usr/include/boost/beast/websocket/impl/stream.hpp \
   /usr/include/boost/beast/websocket/impl/write.hpp \
+  /usr/include/boost/beast/http.hpp \
+  /usr/include/boost/beast/http/basic_dynamic_body.hpp \
+  /usr/include/boost/beast/http/basic_file_body.hpp \
+  /usr/include/boost/beast/http/buffer_body.hpp \
+  /usr/include/boost/beast/http/dynamic_body.hpp \
+  /usr/include/boost/beast/http/file_body.hpp \
+  /usr/include/boost/beast/http/impl/file_body_win32.hpp \
+  /usr/include/boost/beast/http/span_body.hpp \
+  /usr/include/boost/beast/http/vector_body.hpp \
+  /usr/include/nlohmann/json.hpp \
+  /usr/include/nlohmann/adl_serializer.hpp \
+  /usr/include/nlohmann/detail/conversions/from_json.hpp \
+  /usr/include/c++/13/forward_list \
+  /usr/include/c++/13/bits/forward_list.h \
+  /usr/include/c++/13/bits/forward_list.tcc \
+  /usr/include/c++/13/valarray \
+  /usr/include/c++/13/bits/valarray_array.h \
+  /usr/include/c++/13/bits/valarray_array.tcc \
+  /usr/include/c++/13/bits/valarray_before.h \
+  /usr/include/c++/13/bits/slice_array.h \
+  /usr/include/c++/13/bits/valarray_after.h \
+  /usr/include/c++/13/bits/gslice.h \
+  /usr/include/c++/13/bits/gslice_array.h \
+  /usr/include/c++/13/bits/mask_array.h \
+  /usr/include/c++/13/bits/indirect_array.h \
+  /usr/include/nlohmann/detail/exceptions.hpp \
+  /usr/include/nlohmann/detail/value_t.hpp \
+  /usr/include/nlohmann/detail/string_escape.hpp \
+  /usr/include/nlohmann/detail/macro_scope.hpp \
+  /usr/include/nlohmann/thirdparty/hedley/hedley.hpp \
+  /usr/include/nlohmann/detail/meta/detected.hpp \
+  /usr/include/nlohmann/detail/meta/void_t.hpp \
+  /usr/include/nlohmann/detail/input/position_t.hpp \
+  /usr/include/nlohmann/detail/meta/cpp_future.hpp \
+  /usr/include/nlohmann/detail/meta/identity_tag.hpp \
+  /usr/include/nlohmann/detail/meta/type_traits.hpp \
+  /usr/include/nlohmann/detail/iterators/iterator_traits.hpp \
+  /usr/include/nlohmann/detail/meta/call_std/begin.hpp \
+  /usr/include/nlohmann/detail/meta/call_std/end.hpp \
+  /usr/include/nlohmann/json_fwd.hpp \
+  /usr/include/c++/13/filesystem \
+  /usr/include/c++/13/bits/fs_fwd.h \
+  /usr/include/c++/13/bits/fs_path.h \
+  /usr/include/c++/13/codecvt \
+  /usr/include/c++/13/bits/fs_dir.h \
+  /usr/include/c++/13/bits/fs_ops.h \
+  /usr/include/nlohmann/detail/conversions/to_json.hpp \
+  /usr/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+  /usr/include/nlohmann/byte_container_with_subtype.hpp \
+  /usr/include/nlohmann/detail/hash.hpp \
+  /usr/include/nlohmann/detail/input/binary_reader.hpp \
+  /usr/include/nlohmann/detail/input/input_adapters.hpp \
+  /usr/include/nlohmann/detail/input/json_sax.hpp \
+  /usr/include/nlohmann/detail/input/lexer.hpp \
+  /usr/include/nlohmann/detail/meta/is_sax.hpp \
+  /usr/include/nlohmann/detail/input/parser.hpp \
+  /usr/include/nlohmann/detail/iterators/internal_iterator.hpp \
+  /usr/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+  /usr/include/nlohmann/detail/iterators/iter_impl.hpp \
+  /usr/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+  /usr/include/nlohmann/detail/json_pointer.hpp \
+  /usr/include/nlohmann/detail/json_ref.hpp \
+  /usr/include/nlohmann/detail/output/binary_writer.hpp \
+  /usr/include/nlohmann/detail/output/output_adapters.hpp \
+  /usr/include/nlohmann/detail/output/serializer.hpp \
+  /usr/include/nlohmann/detail/conversions/to_chars.hpp \
+  /usr/include/nlohmann/ordered_map.hpp \
+  /usr/include/nlohmann/detail/macro_unscope.hpp \
+  /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+  /usr/include/c++/13/thread \
+  /usr/include/c++/13/stop_token \
+  /usr/include/c++/13/bits/std_thread.h \
+  /usr/include/c++/13/semaphore \
+  /usr/include/c++/13/bits/semaphore_base.h \
+  /usr/include/c++/13/bits/atomic_timed_wait.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
+  /usr/include/semaphore.h \
+  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+  /usr/include/c++/13/condition_variable \
+  /usr/include/c++/13/queue \
+  /usr/include/c++/13/deque \
+  /usr/include/c++/13/bits/stl_deque.h \
+  /usr/include/c++/13/bits/deque.tcc \
+  /usr/include/c++/13/bits/stl_queue.h \
+  /usr/include/boost/asio/strand.hpp \
+  /usr/include/boost/asio/detail/strand_executor_service.hpp \
+  /usr/include/boost/asio/detail/impl/strand_executor_service.hpp \
+  /usr/include/boost/asio/defer.hpp \
+  /usr/include/boost/asio/impl/defer.hpp \
+  /usr/include/boost/asio/dispatch.hpp \
+  /usr/include/boost/asio/impl/dispatch.hpp \
+  /usr/include/boost/asio/detail/impl/strand_executor_service.ipp \
+  /usr/include/boost/asio/io_context_strand.hpp \
+  /usr/include/boost/asio/detail/strand_service.hpp \
+  /usr/include/boost/asio/detail/impl/strand_service.hpp \
+  /usr/include/boost/asio/detail/impl/strand_service.ipp \
   /usr/include/spdlog/spdlog.h \
   /usr/include/spdlog/common.h \
   /usr/include/spdlog/tweakme.h \
@@ -1641,8 +1738,34 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
   /usr/include/yaml-cpp/node/convert.h \
   /usr/include/yaml-cpp/node/detail/impl.h \
   /usr/include/yaml-cpp/node/parse.h \
-  /usr/include/yaml-cpp/node/emit.h
+  /usr/include/yaml-cpp/node/emit.h \
+  ../external/include/jwt-cpp/jwt.h \
+  ../external/include/picojson/picojson.h \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/cinttypes \
+  /usr/include/inttypes.h \
+  ../external/include/jwt-cpp/base.h \
+  /usr/include/openssl/ecdsa.h \
+  /usr/include/c++/13/experimental/type_traits \
+  /usr/include/c++/13/experimental/bits/lfts_config.h \
+  /usr/include/openssl/param_build.h \
+  ../external/include/jwt-cpp/traits/kazuho-picojson/defaults.h \
+  ../external/include/jwt-cpp/traits/kazuho-picojson/traits.h
 
+
+/usr/include/openssl/param_build.h:
+
+/usr/include/c++/13/experimental/type_traits:
+
+/usr/include/openssl/ecdsa.h:
+
+../external/include/jwt-cpp/base.h:
+
+/usr/include/inttypes.h:
+
+/usr/include/c++/13/cinttypes:
+
+../external/include/picojson/picojson.h:
 
 /usr/include/yaml-cpp/node/emit.h:
 
@@ -1664,8 +1787,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/c++/13/bits/stl_multiset.h:
 
-/usr/include/c++/13/bits/stl_set.h:
-
 /usr/include/c++/13/bits/list.tcc:
 
 /usr/include/c++/13/bits/stl_list.h:
@@ -1674,11 +1795,9 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/yaml-cpp/stlemitter.h:
 
+../external/include/jwt-cpp/jwt.h:
+
 /usr/include/yaml-cpp/emitterstyle.h:
-
-/usr/include/yaml-cpp/ostream_wrapper.h:
-
-/usr/include/yaml-cpp/null.h:
 
 /usr/include/yaml-cpp/emittermanip.h:
 
@@ -1707,6 +1826,110 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/yaml-cpp/node/impl.h:
 
 /usr/include/spdlog/spdlog.h:
+
+/usr/include/boost/asio/detail/impl/strand_service.hpp:
+
+/usr/include/yaml-cpp/ostream_wrapper.h:
+
+/usr/include/boost/asio/impl/dispatch.hpp:
+
+/usr/include/boost/asio/dispatch.hpp:
+
+/usr/include/boost/asio/detail/strand_executor_service.hpp:
+
+/usr/include/boost/asio/strand.hpp:
+
+/usr/include/c++/13/deque:
+
+/usr/include/c++/13/condition_variable:
+
+/usr/include/semaphore.h:
+
+/usr/include/c++/13/bits/semaphore_base.h:
+
+/usr/include/c++/13/semaphore:
+
+/usr/include/c++/13/bits/std_thread.h:
+
+/usr/include/c++/13/stop_token:
+
+/usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
+
+/usr/include/nlohmann/detail/macro_unscope.hpp:
+
+/usr/include/nlohmann/ordered_map.hpp:
+
+/usr/include/nlohmann/detail/output/output_adapters.hpp:
+
+/usr/include/nlohmann/detail/output/binary_writer.hpp:
+
+/usr/include/nlohmann/detail/json_ref.hpp:
+
+/usr/include/yaml-cpp/null.h:
+
+/usr/include/nlohmann/detail/meta/is_sax.hpp:
+
+/usr/include/nlohmann/detail/input/json_sax.hpp:
+
+/usr/include/nlohmann/detail/input/input_adapters.hpp:
+
+/usr/include/nlohmann/detail/input/binary_reader.hpp:
+
+/usr/include/nlohmann/detail/hash.hpp:
+
+/usr/include/nlohmann/byte_container_with_subtype.hpp:
+
+/usr/include/c++/13/codecvt:
+
+/usr/include/nlohmann/detail/meta/call_std/begin.hpp:
+
+/usr/include/nlohmann/detail/iterators/iterator_traits.hpp:
+
+/usr/include/nlohmann/detail/meta/identity_tag.hpp:
+
+/usr/include/nlohmann/detail/meta/cpp_future.hpp:
+
+/usr/include/c++/13/experimental/bits/lfts_config.h:
+
+/usr/include/nlohmann/detail/input/position_t.hpp:
+
+/usr/include/nlohmann/thirdparty/hedley/hedley.hpp:
+
+/usr/include/nlohmann/detail/macro_scope.hpp:
+
+/usr/include/nlohmann/detail/value_t.hpp:
+
+/usr/include/nlohmann/detail/exceptions.hpp:
+
+/usr/include/c++/13/bits/gslice_array.h:
+
+/usr/include/c++/13/bits/gslice.h:
+
+/usr/include/c++/13/bits/valarray_after.h:
+
+/usr/include/c++/13/bits/valarray_array.tcc:
+
+/usr/include/c++/13/valarray:
+
+/usr/include/c++/13/bits/stl_set.h:
+
+/usr/include/nlohmann/adl_serializer.hpp:
+
+/usr/include/nlohmann/json.hpp:
+
+/usr/include/boost/beast/http/span_body.hpp:
+
+/usr/include/boost/beast/http/file_body.hpp:
+
+/usr/include/boost/beast/http/dynamic_body.hpp:
+
+/usr/include/boost/beast/http/buffer_body.hpp:
+
+/usr/include/boost/beast/http/basic_file_body.hpp:
+
+/usr/include/boost/beast/http/basic_dynamic_body.hpp:
+
+/usr/include/boost/beast/http.hpp:
 
 /usr/include/boost/beast/websocket/impl/read.hpp:
 
@@ -1786,6 +2009,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/beast/websocket/detail/utf8_checker.ipp:
 
+/usr/include/c++/13/bits/indirect_array.h:
+
 /usr/include/boost/beast/websocket/detail/frame.hpp:
 
 /usr/include/boost/beast/core/detail/pcg.hpp:
@@ -1835,6 +2060,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/beast/http/impl/verb.ipp:
 
 /usr/include/boost/beast/http/verb.hpp:
+
+/usr/include/nlohmann/detail/string_escape.hpp:
 
 /usr/include/boost/beast/websocket/stream.hpp:
 
@@ -1934,6 +2161,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/openssl/ssl2.h:
 
+/usr/include/boost/asio/detail/strand_service.hpp:
+
 /usr/include/openssl/prov_ssl.h:
 
 /usr/include/openssl/sslerr_legacy.h:
@@ -1949,6 +2178,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/openssl/pemerr.h:
 
 /usr/include/openssl/http.h:
+
+/usr/include/c++/13/bits/forward_list.tcc:
 
 /usr/include/openssl/ocsp.h:
 
@@ -2180,6 +2411,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/type_traits/has_not_equal_to.hpp:
 
+/usr/include/nlohmann/detail/meta/void_t.hpp:
+
 /usr/include/boost/type_traits/has_new_operator.hpp:
 
 /usr/include/boost/type_traits/has_multiplies_assign.hpp:
@@ -2193,6 +2426,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/type_traits/remove_pointer.hpp:
 
 /usr/include/boost/type_traits/has_minus.hpp:
+
+/usr/include/nlohmann/detail/meta/call_std/end.hpp:
 
 /usr/include/boost/type_traits/has_left_shift_assign.hpp:
 
@@ -2290,29 +2525,7 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/intrusive/detail/default_header_holder.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
-
-/usr/include/signal.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/boost/asio/detail/impl/scheduler.ipp:
-
-/usr/include/boost/asio/detail/posix_thread.hpp:
-
-/usr/include/boost/smart_ptr/make_unique.hpp:
-
-/usr/include/boost/asio/post.hpp:
-
-/usr/include/boost/asio/detail/impl/null_event.ipp:
-
-/usr/include/arpa/inet.h:
-
-/usr/include/x86_64-linux-gnu/bits/sigaction.h:
-
-/usr/include/boost/asio/detail/impl/service_registry.hpp:
-
-/usr/include/c++/13/bits/node_handle.h:
+/usr/include/boost/intrusive/detail/is_stateful_value_traits.hpp:
 
 /usr/include/boost/mp11/detail/config.hpp:
 
@@ -2321,10 +2534,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
 
 /usr/include/boost/asio/impl/execution_context.hpp:
-
-/usr/include/boost/numeric/conversion/detail/is_subranged.hpp:
-
-/usr/include/boost/asio/detail/impl/handler_tracking.ipp:
 
 /usr/include/boost/asio/detail/handler_invoke_helpers.hpp:
 
@@ -2341,10 +2550,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/asio/traits/submit_free.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
-
-/usr/include/boost/asio/detail/impl/socket_ops.ipp:
-
-/usr/include/boost/type_traits/is_bounded_array.hpp:
 
 /usr/include/boost/asio/detail/impl/posix_mutex.ipp:
 
@@ -2432,6 +2637,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/impl/handler_alloc_hook.ipp:
 
+/usr/include/c++/13/bits/valarray_array.h:
+
 /usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/boost/asio/multiple_exceptions.hpp:
@@ -2464,10 +2671,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/detail/noncopyable.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/boost/config/stdlib/libstdcpp3.hpp:
-
 /usr/include/boost/beast/core/impl/saved_handler.ipp:
 
 /usr/include/boost/asio/is_applicable_property.hpp:
@@ -2483,6 +2686,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/asio/execution/operation_state.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/un.h:
+
+/usr/include/nlohmann/detail/meta/type_traits.hpp:
 
 /usr/include/boost/beast/core/detail/temporary_buffer.hpp:
 
@@ -2562,9 +2767,9 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mpl/bool.hpp:
 
-/usr/include/boost/asio/detail/pop_options.hpp:
+/usr/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
 
-/usr/include/boost/asio/detail/select_interrupter.hpp:
+/usr/include/boost/asio/detail/pop_options.hpp:
 
 /usr/include/boost/asio/traits/execute_free.hpp:
 
@@ -2586,10 +2791,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mp11/detail/mp_fold.hpp:
 
-/usr/include/boost/asio/bind_executor.hpp:
-
-/usr/include/boost/mp11/detail/mp_is_list.hpp:
-
 /usr/include/boost/mp11/detail/mp_list.hpp:
 
 /usr/include/boost/mp11/integral.hpp:
@@ -2604,6 +2805,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/traits/query_member.hpp:
 
+/usr/include/nlohmann/detail/meta/detected.hpp:
+
 /usr/include/boost/asio/traits/start_free.hpp:
 
 /usr/include/c++/13/complex:
@@ -2616,29 +2819,15 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/execution/detail/as_operation.hpp:
 
-/usr/include/boost/asio/execution/bulk_execute.hpp:
-
-/usr/include/boost/beast/core/detail/stream_base.hpp:
-
-/usr/include/boost/beast/core/impl/file_stdio.ipp:
-
-/usr/include/boost/logic/tribool_fwd.hpp:
-
-/usr/include/boost/beast/core/impl/error.ipp:
-
 /usr/include/openssl/ocsperr.h:
 
 /usr/include/boost/asio/detail/buffer_sequence_adapter.hpp:
 
 /usr/include/c++/13/bits/unique_lock.h:
 
-/usr/include/boost/intrusive/intrusive_fwd.hpp:
-
 /usr/include/boost/beast/websocket/detail/utf8_checker.hpp:
 
 /usr/include/c++/13/bits/stl_map.h:
-
-/usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/c++/13/cwctype:
 
@@ -2658,21 +2847,13 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
 
-/usr/include/boost/logic/tribool.hpp:
-
-/usr/include/boost/type_traits/has_divides_assign.hpp:
-
-/usr/include/c++/13/bits/shared_ptr.h:
-
 /usr/include/boost/asio/traits/equality_comparable.hpp:
+
+/usr/include/c++/13/bits/stl_deque.h:
 
 /usr/include/string.h:
 
 /usr/include/c++/13/cstring:
-
-/usr/include/boost/asio/handler_invoke_hook.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
 /usr/include/boost/shared_ptr.hpp:
 
@@ -2684,6 +2865,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/system/detail/config.hpp:
 
+/usr/include/boost/asio/detail/impl/strand_service.ipp:
+
 /usr/include/boost/beast/core/file.hpp:
 
 /usr/include/boost/system/api_config.hpp:
@@ -2691,12 +2874,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/core/enable_if.hpp:
 
 /usr/include/boost/mp11/detail/mp_remove_if.hpp:
-
-/usr/include/c++/13/bits/ranges_algo.h:
-
-/usr/include/boost/system/detail/system_category_posix.hpp:
-
-/usr/include/boost/asio/io_context.hpp:
 
 /usr/include/boost/system/error_code.hpp:
 
@@ -2720,12 +2897,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/traits/query_free.hpp:
 
-/usr/include/boost/core/exchange.hpp:
-
-/usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp:
-
-/usr/include/boost/detail/workaround.hpp:
-
 /usr/include/boost/version.hpp:
 
 /usr/include/boost/intrusive/parent_from_member.hpp:
@@ -2734,17 +2905,9 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/config/detail/suffix.hpp:
 
-/usr/include/c++/13/tr1/hypergeometric.tcc:
-
-/usr/include/boost/type_traits/copy_cv.hpp:
-
-/usr/include/c++/13/bits/locale_facets.h:
-
 /usr/include/boost/config/detail/posix_features.hpp:
 
 /usr/include/boost/preprocessor/arithmetic/add.hpp:
-
-/usr/include/boost/asio/detail/reactor.hpp:
 
 /usr/include/boost/beast/websocket/impl/ssl.hpp:
 
@@ -2768,13 +2931,97 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/config/detail/select_compiler_config.hpp:
 
+/usr/include/c++/13/queue:
+
 /usr/include/boost/type_traits/add_volatile.hpp:
 
 /usr/include/c++/13/tuple:
 
 /usr/include/boost/beast/core.hpp:
 
+/usr/include/nlohmann/detail/iterators/primitive_iterator.hpp:
+
 /usr/include/boost/asio/detail/completion_handler.hpp:
+
+/usr/include/boost/asio/execution/bulk_execute.hpp:
+
+/usr/include/boost/beast/core/detail/stream_base.hpp:
+
+/usr/include/boost/beast/core/impl/file_stdio.ipp:
+
+/usr/include/boost/logic/tribool_fwd.hpp:
+
+/usr/include/boost/beast/core/impl/error.ipp:
+
+/usr/include/c++/13/span:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/c++/13/format:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/c++/13/clocale:
+
+/usr/include/boost/intrusive/detail/array_initializer.hpp:
+
+/usr/include/c++/13/stdexcept:
+
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/boost/asio/impl/defer.hpp:
+
+/usr/include/boost/type_traits/is_floating_point.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/libintl.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+
+/usr/include/boost/asio/handler_invoke_hook.hpp:
+
+/usr/include/boost/logic/tribool.hpp:
+
+/usr/include/boost/type_traits/has_divides_assign.hpp:
+
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/usr/include/boost/date_time/dst_rules.hpp:
+
+/usr/include/c++/13/bits/chrono_io.h:
+
+/usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+
+/usr/include/boost/asio/detail/impl/service_registry.hpp:
+
+/usr/include/c++/13/bits/node_handle.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/boost/intrusive/intrusive_fwd.hpp:
+
+/usr/include/boost/detail/workaround.hpp:
+
+/usr/include/boost/core/exchange.hpp:
+
+/usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp:
+
+../src/utils/utils.hpp:
+
+/usr/include/boost/mpl/aux_/adl_barrier.hpp:
 
 /usr/include/boost/asio/executor_work_guard.hpp:
 
@@ -2830,12 +3077,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/c++/13/span:
-
-/usr/include/x86_64-linux-gnu/bits/statx.h:
-
 /usr/include/boost/beast/core/async_base.hpp:
 
 /usr/include/c++/13/bits/max_size_type.h:
@@ -2852,9 +3093,7 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/preprocessor/control/expr_iif.hpp:
 
-/usr/include/linux/version.h:
-
-/usr/include/boost/intrusive/link_mode.hpp:
+/usr/include/nlohmann/detail/input/lexer.hpp:
 
 /usr/include/boost/intrusive/detail/tree_iterator.hpp:
 
@@ -2908,14 +3147,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/date_time/date_duration_types.hpp:
 
-/usr/include/boost/beast/http/impl/message.hpp:
-
-/usr/include/openssl/types.h:
-
-/usr/include/boost/mpl/aux_/config/compiler.hpp:
-
-/usr/include/c++/13/string_view:
-
 /usr/include/features-time64.h:
 
 /usr/include/boost/asio/ip/impl/address_v4.hpp:
@@ -2944,6 +3175,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/c++/13/bits/invoke.h:
 
+/usr/include/c++/13/filesystem:
+
 /usr/include/boost/optional/detail/optional_swap.hpp:
 
 /usr/include/boost/date_time/posix_time/posix_time_duration.hpp:
@@ -2951,6 +3184,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/c++/13/bits/refwrap.h:
 
 /usr/include/boost/asio/execution/start.hpp:
+
+/usr/include/boost/asio/detail/impl/strand_executor_service.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
@@ -2961,8 +3196,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
 
 /usr/include/boost/mpl/aux_/config/arrays.hpp:
-
-/usr/include/boost/asio/detail/object_pool.hpp:
 
 /usr/include/c++/13/bits/ranges_cmp.h:
 
@@ -2975,6 +3208,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:
+
+/usr/include/c++/13/bits/this_thread_sleep.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd.h:
 
@@ -3001,6 +3236,10 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/asio/detail/service_registry.hpp:
 
 /usr/include/c++/13/bits/ostream_insert.h:
+
+/usr/include/c++/13/variant:
+
+/usr/include/c++/13/system_error:
 
 /usr/include/c++/13/bits/stringfwd.h:
 
@@ -3036,15 +3275,21 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/date_time/posix_time/date_duration_operators.hpp:
 
+/usr/include/nlohmann/detail/conversions/to_json.hpp:
+
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
 /usr/include/x86_64-linux-gnu/asm/ioctl.h:
+
+/usr/include/boost/asio/io_context_strand.hpp:
 
 /usr/include/boost/asio/execution/submit.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/forward_list:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
@@ -3082,16 +3327,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/c++/13/clocale:
-
-/usr/include/boost/intrusive/detail/array_initializer.hpp:
-
-/usr/include/c++/13/stdexcept:
-
-/usr/include/c++/13/format:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
 /usr/include/boost/type_traits/has_pre_decrement.hpp:
@@ -3100,15 +3335,13 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/linux/posix_types.h:
 
-/usr/include/boost/asio/detail/impl/posix_thread.ipp:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/boost/intrusive/detail/assert.hpp:
 
 /usr/include/boost/asio/detail/executor_op.hpp:
+
+/usr/include/nlohmann/detail/output/serializer.hpp:
 
 /usr/include/boost/mpl/aux_/value_wknd.hpp:
 
@@ -3117,10 +3350,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/boost/asio/impl/system_context.ipp:
-
-/usr/include/boost/intrusive/pointer_traits.hpp:
 
 /usr/include/c++/13/concepts:
 
@@ -3156,6 +3385,20 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/linux/falloc.h:
 
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+
+/usr/include/signal.h:
+
+/usr/include/boost/type_traits/copy_cv.hpp:
+
+/usr/include/c++/13/bits/locale_facets.h:
+
+/usr/include/c++/13/tr1/hypergeometric.tcc:
+
 /usr/include/boost/beast/core/basic_stream.hpp:
 
 /usr/include/boost/asio/impl/system_executor.hpp:
@@ -3180,6 +3423,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
+/usr/include/nlohmann/detail/iterators/internal_iterator.hpp:
+
 /usr/include/boost/move/detail/type_traits.hpp:
 
 /usr/include/boost/beast/core/detail/stream_traits.hpp:
@@ -3198,19 +3443,19 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/c++/13/bits/hashtable_policy.h:
 
-/usr/include/boost/asio/detail/reactor_fwd.hpp:
-
-/usr/include/boost/preprocessor/facilities/expand.hpp:
-
 /usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/boost/beast/http/vector_body.hpp:
 
 /usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
+/usr/include/boost/intrusive/detail/equal_to_value.hpp:
+
+/usr/include/c++/13/iomanip:
+
+/usr/include/c++/13/pstl/pstl_config.h:
+
 /usr/include/boost/asio/execution/scheduler.hpp:
-
-/usr/include/c++/13/system_error:
-
-/usr/include/c++/13/variant:
 
 /usr/include/boost/asio/handler_alloc_hook.hpp:
 
@@ -3224,11 +3469,15 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mpl/void.hpp:
 
+/usr/include/nlohmann/detail/conversions/from_json.hpp:
+
 /usr/include/boost/asio/require.hpp:
 
 /usr/include/c++/13/bits/ranges_base.h:
 
 /usr/include/boost/type_traits/remove_bounds.hpp:
+
+/usr/include/c++/13/bits/fs_fwd.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -3302,15 +3551,13 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
 
+/usr/include/c++/13/bits/fs_path.h:
+
 /usr/include/boost/beast/core/file_win32.hpp:
 
 /usr/include/boost/config.hpp:
 
 /usr/include/boost/date_time/compiler_config.hpp:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
 
 /usr/include/c++/13/cwchar:
 
@@ -3318,15 +3565,19 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/boost/type_traits/has_multiplies.hpp:
-
-/usr/include/boost/asio/detail/cstdint.hpp:
-
 /usr/include/boost/asio/basic_socket_streambuf.hpp:
 
 /usr/include/boost/type_traits/has_trivial_move_constructor.hpp:
 
 /usr/include/c++/13/charconv:
+
+/usr/include/boost/type_traits/has_multiplies.hpp:
+
+/usr/include/boost/asio/detail/cstdint.hpp:
+
+/usr/include/boost/asio/detail/posix_static_mutex.hpp:
+
+/usr/include/c++/13/sstream:
 
 /usr/include/boost/type_traits/negation.hpp:
 
@@ -3338,6 +3589,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
+/usr/include/c++/13/bits/valarray_before.h:
+
 /usr/include/boost/asio/basic_stream_socket.hpp:
 
 /usr/include/c++/13/cstdio:
@@ -3347,12 +3600,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/asio/execution/detail/as_receiver.hpp:
 
 /usr/include/boost/asio/detail/thread_context.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/libintl.h:
 
 /usr/include/c++/13/bits/string_view.tcc:
 
@@ -3374,10 +3621,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/config/compiler/gcc.hpp:
 
-/usr/include/boost/asio/detail/eventfd_select_interrupter.hpp:
-
-/usr/include/boost/type_traits/enable_if.hpp:
-
 /usr/include/c++/13/bits/locale_facets.tcc:
 
 /usr/include/boost/intrusive/detail/iterator.hpp:
@@ -3392,8 +3635,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
 /usr/include/c++/13/ext/numeric_traits.h:
 
 /usr/include/c++/13/bits/stl_iterator.h:
@@ -3405,6 +3646,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/type_traits/integral_constant.hpp:
 
 /usr/include/c++/13/bits/charconv.h:
+
+/usr/include/c++/13/bits/slice_array.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
@@ -3450,14 +3693,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/detail/tss_ptr.hpp:
 
-/usr/include/boost/asio/detail/limits.hpp:
-
-/usr/include/openssl/cryptoerr_legacy.h:
-
-/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
-
-/usr/include/boost/asio/detail/work_dispatcher.hpp:
-
 /usr/include/yaml-cpp/node/detail/node.h:
 
 /usr/include/yaml-cpp/parser.h:
@@ -3487,6 +3722,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/include/boost/asio/detail/impl/strand_executor_service.ipp:
 
 /usr/include/boost/asio/execution/outstanding_work.hpp:
 
@@ -3530,6 +3767,16 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mp11/detail/mp_map_find.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/boost/mp11/detail/mp_is_list.hpp:
+
+/usr/include/boost/asio/bind_executor.hpp:
+
+/usr/include/boost/type_traits/is_bounded_array.hpp:
+
+/usr/include/boost/asio/detail/impl/socket_ops.ipp:
+
 /usr/include/boost/type_traits/promote.hpp:
 
 /usr/include/c++/13/bits/exception_defines.h:
@@ -3562,6 +3809,12 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/asm/unistd.h:
 
+/usr/include/boost/asio/detail/scoped_ptr.hpp:
+
+/usr/include/c++/13/csignal:
+
+/usr/include/c++/13/bits/quoted_string.h:
+
 /usr/include/openssl/x509v3.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
@@ -3573,6 +3826,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/c++/13/exception:
 
 /usr/include/boost/asio/detail/posix_event.hpp:
+
+/usr/include/c++/13/bits/forward_list.h:
 
 /usr/include/boost/beast/core/static_string.hpp:
 
@@ -3604,6 +3859,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/type_traits/is_enum.hpp:
 
+/usr/include/c++/13/optional:
+
 /usr/include/c++/13/bits/vector.tcc:
 
 /usr/include/boost/beast/http/chunk_encode.hpp:
@@ -3624,7 +3881,15 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
+/usr/include/c++/13/chrono:
+
+/usr/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
+
 /usr/include/c++/13/bits/shared_ptr_atomic.h:
+
+/usr/include/boost/asio/defer.hpp:
+
+/usr/include/nlohmann/detail/json_pointer.hpp:
 
 /usr/include/boost/asio/execution_context.hpp:
 
@@ -3635,6 +3900,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/asio/detail/event.hpp:
 
 /usr/include/boost/type_traits/make_void.hpp:
+
+/usr/include/c++/13/bits/atomic_timed_wait.h:
 
 /usr/include/boost/utility/string_view_fwd.hpp:
 
@@ -3674,8 +3941,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/asio/impl/io_context.hpp:
 
-/usr/include/boost/asio/detail/epoll_reactor.hpp:
-
 /usr/include/boost/beast/core/detail/win32_unicode_path.hpp:
 
 /usr/include/c++/13/ostream:
@@ -3686,11 +3951,21 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
 
+/usr/include/c++/13/bits/locale_facets_nonio.h:
+
+/usr/include/boost/optional.hpp:
+
+/usr/include/c++/13/bits/fs_ops.h:
+
 /usr/include/boost/asio/detail/config.hpp:
+
+/usr/include/c++/13/bits/fs_dir.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/nlohmann/detail/iterators/iteration_proxy.hpp:
 
 /usr/include/x86_64-linux-gnu/openssl/configuration.h:
 
@@ -3711,10 +3986,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/type_traits/has_greater_equal.hpp:
 
 /usr/include/boost/asio/detail/date_time_fwd.hpp:
-
-/usr/include/boost/asio/detail/reactor_op.hpp:
-
-/usr/include/boost/preprocessor/detail/is_binary.hpp:
 
 /usr/include/boost/config/user.hpp:
 
@@ -3744,12 +4015,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
 
-/usr/include/boost/type_traits/has_less.hpp:
-
-/usr/include/boost/asio/detail/concurrency_hint.hpp:
-
-/usr/include/boost/asio/detail/posix_signal_blocker.hpp:
-
 /usr/include/boost/beast/http/basic_parser.hpp:
 
 /usr/include/boost/asio/execution/set_done.hpp:
@@ -3765,6 +4030,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/c++/13/bits/ranges_util.h:
+
+/usr/include/nlohmann/detail/conversions/to_chars.hpp:
 
 /usr/include/boost/mp11/integer_sequence.hpp:
 
@@ -3811,6 +4078,94 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/numeric/conversion/int_float_mixture_enum.hpp:
 
 /usr/include/linux/close_range.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
+/usr/include/boost/asio/detail/impl/null_event.ipp:
+
+/usr/include/boost/preprocessor/facilities/expand.hpp:
+
+/usr/include/boost/asio/detail/reactor_fwd.hpp:
+
+/usr/include/boost/smart_ptr/make_unique.hpp:
+
+/usr/include/boost/asio/post.hpp:
+
+/usr/include/boost/asio/detail/posix_thread.hpp:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/boost/asio/detail/impl/posix_thread.ipp:
+
+/usr/include/linux/version.h:
+
+/usr/include/boost/intrusive/link_mode.hpp:
+
+/usr/include/c++/13/thread:
+
+/usr/include/boost/asio/detail/impl/scheduler.ipp:
+
+/usr/include/boost/intrusive/pointer_traits.hpp:
+
+/usr/include/boost/asio/impl/system_context.ipp:
+
+/usr/include/boost/type_traits/has_less.hpp:
+
+/usr/include/boost/asio/detail/concurrency_hint.hpp:
+
+/usr/include/boost/asio/detail/posix_signal_blocker.hpp:
+
+/usr/include/boost/asio/detail/limits.hpp:
+
+/usr/include/openssl/cryptoerr_legacy.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
+
+/usr/include/boost/asio/detail/work_dispatcher.hpp:
+
+../external/include/jwt-cpp/traits/kazuho-picojson/defaults.h:
+
+/usr/include/boost/asio/detail/reactor.hpp:
+
+/usr/include/boost/asio/detail/epoll_reactor.hpp:
+
+/usr/include/nlohmann/detail/input/parser.hpp:
+
+/usr/include/boost/asio/detail/object_pool.hpp:
+
+/usr/include/boost/preprocessor/detail/is_binary.hpp:
+
+/usr/include/boost/asio/detail/reactor_op.hpp:
+
+/usr/include/nlohmann/json_fwd.hpp:
+
+/usr/include/boost/beast/http/impl/message.hpp:
+
+/usr/include/openssl/types.h:
+
+/usr/include/c++/13/string_view:
+
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
+
+/usr/include/boost/asio/detail/select_interrupter.hpp:
+
+/usr/include/boost/type_traits/enable_if.hpp:
+
+/usr/include/boost/asio/detail/eventfd_select_interrupter.hpp:
+
+/usr/include/boost/asio/detail/impl/handler_tracking.ipp:
+
+/usr/include/boost/numeric/conversion/detail/is_subranged.hpp:
+
+/usr/include/boost/system/detail/system_category_posix.hpp:
+
+/usr/include/boost/asio/io_context.hpp:
+
+/usr/include/c++/13/bits/ranges_algo.h:
+
+/usr/include/x86_64-linux-gnu/bits/statx.h:
 
 /usr/include/linux/stat.h:
 
@@ -3861,6 +4216,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/type_traits/has_logical_not.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/ioctl-types.h:
+
+/usr/include/boost/beast/http/impl/file_body_win32.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
 
@@ -3924,9 +4281,9 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/core/first_scalar.hpp:
 
-/usr/include/boost/asio/detail/thread.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/boost/asio/detail/thread.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
 
@@ -3952,9 +4309,15 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/bits/sigstksz.h:
 
+/usr/include/c++/13/bits/mask_array.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/boost/asio/detail/thread_group.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
@@ -3978,10 +4341,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/beast/core/detail/work_guard.hpp:
 
-/usr/include/boost/optional.hpp:
-
-/usr/include/c++/13/bits/locale_facets_nonio.h:
-
 /usr/include/boost/core/addressof.hpp:
 
 /usr/include/boost/beast/core/make_printable.hpp:
@@ -3996,9 +4355,9 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/endian/detail/integral_by_size.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/stat.h:
-
 /usr/include/boost/config/pragma_message.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/stat.h:
 
 /usr/include/boost/type_traits/has_nothrow_constructor.hpp:
 
@@ -4043,10 +4402,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/type_traits/is_arithmetic.hpp:
 
 /usr/include/boost/type_traits/is_integral.hpp:
-
-/usr/include/boost/type_traits/is_floating_point.hpp:
-
-/usr/include/c++/13/bits/codecvt.h:
 
 /usr/include/boost/type_traits/is_pointer.hpp:
 
@@ -4099,6 +4454,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
 
 /usr/include/boost/type_traits/has_trivial_move_assign.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/semaphore.h:
 
 /usr/include/boost/type_traits/is_assignable.hpp:
 
@@ -4292,6 +4649,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
+/usr/include/c++/13/iostream:
+
 /usr/include/c++/13/bits/hash_bytes.h:
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
@@ -4321,10 +4680,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_atomic.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
-
-/usr/include/c++/13/bits/chrono_io.h:
 
 /usr/include/boost/asio/basic_socket_iostream.hpp:
 
@@ -4387,6 +4742,10 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/asm-generic/types.h:
 
 /usr/include/boost/intrusive/detail/mpl.hpp:
+
+/usr/include/c++/13/istream:
+
+/usr/include/c++/13/cmath:
 
 /usr/include/boost/asio/detail/chrono_time_traits.hpp:
 
@@ -4476,8 +4835,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
-/usr/include/boost/intrusive/detail/is_stateful_value_traits.hpp:
-
 /usr/include/boost/date_time/gregorian/greg_ymd.hpp:
 
 /usr/include/boost/beast/websocket/impl/rfc6455.hpp:
@@ -4493,18 +4850,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/enable_shared_from_this.hpp:
 
 /usr/include/boost/date_time/date_generators.hpp:
-
-/usr/include/boost/asio/detail/posix_static_mutex.hpp:
-
-/usr/include/c++/13/sstream:
-
-/usr/include/c++/13/cmath:
-
-/usr/include/c++/13/istream:
-
-/usr/include/boost/asio/detail/thread_group.hpp:
-
-/usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/boost/beast/core/buffered_read_stream.hpp:
 
@@ -4522,15 +4867,17 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/mpl/aux_/config/msvc.hpp:
 
+../external/include/jwt-cpp/traits/kazuho-picojson/traits.h:
+
 /usr/include/boost/mpl/aux_/na_spec.hpp:
 
 /usr/include/boost/mpl/lambda_fwd.hpp:
 
-/usr/include/boost/mpl/aux_/adl_barrier.hpp:
-
 /usr/include/boost/asio/detail/array.hpp:
 
 /usr/include/boost/mpl/aux_/config/adl.hpp:
+
+/usr/include/nlohmann/detail/iterators/iter_impl.hpp:
 
 /usr/include/c++/13/any:
 
@@ -4549,6 +4896,8 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
 
 /usr/include/boost/mpl/aux_/config/dtp.hpp:
+
+/usr/include/c++/13/bits/deque.tcc:
 
 /usr/include/boost/mpl/aux_/arithmetic_op.hpp:
 
@@ -4642,11 +4991,11 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/beast/core/buffers_cat.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/stat.h:
-
 /usr/include/c++/13/bits/chrono.h:
 
 /usr/include/c++/13/limits:
+
+/usr/include/x86_64-linux-gnu/bits/stat.h:
 
 /usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
 
@@ -4718,19 +5067,13 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 
 /usr/include/boost/date_time/posix_time/time_period.hpp:
 
+/usr/include/c++/13/bits/stl_queue.h:
+
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/boost/date_time/time_iterator.hpp:
-
-/usr/include/boost/date_time/dst_rules.hpp:
-
-/usr/include/boost/intrusive/detail/equal_to_value.hpp:
-
-/usr/include/c++/13/pstl/pstl_config.h:
-
-/usr/include/c++/13/iomanip:
 
 /usr/include/boost/asio/detail/impl/buffer_sequence_adapter.ipp:
 
@@ -4739,22 +5082,6 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o: ../src/
 /usr/include/boost/asio/detail/wait_handler.hpp:
 
 /usr/include/boost/asio/detail/chrono.hpp:
-
-/usr/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
-
-/usr/include/c++/13/chrono:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
-
-/usr/include/c++/13/bits/locale_facets_nonio.tcc:
-
-/usr/include/boost/asio/detail/scoped_ptr.hpp:
-
-/usr/include/c++/13/csignal:
-
-/usr/include/c++/13/bits/quoted_string.h:
-
-/usr/include/c++/13/optional:
 
 /usr/include/boost/beast/zlib/detail/ranges.hpp:
 

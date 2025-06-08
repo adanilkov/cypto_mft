@@ -14,7 +14,7 @@ endif()
 # Compiler flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O1")
 
 # Include FetchContent
 include(FetchContent)
@@ -25,6 +25,13 @@ FetchContent_Declare(
     URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
 )
 FetchContent_MakeAvailable(nlohmann_json)
+
+# Fetch jwt-cpp
+FetchContent_Declare(
+    jwt-cpp
+    URL https://github.com/Thalhammer/jwt-cpp/archive/refs/tags/v0.7.1.tar.gz
+)
+FetchContent_MakeAvailable(jwt-cpp)
 
 # Find required packages
 find_package(Threads REQUIRED)
@@ -39,19 +46,11 @@ if(NOT Boost_FOUND)
     message(FATAL_ERROR "Boost not found")
 endif()
 
-# WebSocket++ and ASIO configuration
+# Boost.Beast configuration
 add_definitions(-DBOOST_ERROR_CODE_HEADER_ONLY)
 add_definitions(-DBOOST_SYSTEM_NO_DEPRECATED)
 add_definitions(-DBOOST_ASIO_NO_DEPRECATED)
 add_definitions(-DBOOST_ALL_NO_LIB)
-add_definitions(-DASIO_STANDALONE)
-add_definitions(-DWEBSOCKETPP_USE_STANDALONE_ASIO)
-add_definitions(-DWEBSOCKETPP_USE_BOOST)
-add_definitions(-DBOOST_ASIO_HAS_STD_CHRONO)
-add_definitions(-DBOOST_ASIO_HAS_STD_ADDRESSOF)
-add_definitions(-DBOOST_ASIO_HAS_STD_ARRAY)
-add_definitions(-DBOOST_ASIO_HAS_STD_SHARED_PTR)
-add_definitions(-DBOOST_ASIO_HAS_STD_TYPE_TRAITS)
 
 # Include directories
 include_directories(
@@ -61,8 +60,7 @@ include_directories(
     ${PROMETHEUS_CPP_INCLUDE_DIRS}
     ${OPENSSL_INCLUDE_DIR}
     ${Boost_INCLUDE_DIRS}
-    ${Boost_INCLUDE_DIRS}/boost
-    /usr/include/websocketpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/include
 )
 
 # Add subdirectories
@@ -88,6 +86,7 @@ target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
     Threads::Threads
     nlohmann_json::nlohmann_json
+    jwt-cpp::jwt-cpp
 )
 
 # Install targets

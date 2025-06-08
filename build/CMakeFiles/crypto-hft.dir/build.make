@@ -103,6 +103,8 @@ crypto-hft: /usr/lib/x86_64-linux-gnu/libcrypto.so
 crypto-hft: src/core/libcrypto_hft_core.a
 crypto-hft: /usr/local/lib/libprometheus-cpp-core.so.1.3.0
 crypto-hft: src/utils/libcrypto_hft_utils.a
+crypto-hft: /usr/lib/x86_64-linux-gnu/libssl.so
+crypto-hft: /usr/lib/x86_64-linux-gnu/libcrypto.so
 crypto-hft: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.9.2
 crypto-hft: /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
 crypto-hft: /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0

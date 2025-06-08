@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a file.
+BOOSTJSON_INCLUDE_DIR:PATH=BOOSTJSON_INCLUDE_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0
 
@@ -303,14 +306,31 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
+// for dotenv-cpp
+FETCHCONTENT_SOURCE_DIR_DOTENV-CPP:PATH=
+
+//When not empty, overrides where to find pre-populated content
+// for jwt-cpp
+FETCHCONTENT_SOURCE_DIR_JWT-CPP:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for nlohmann_json
 FETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
+//Enables UPDATE_DISCONNECTED behavior just for population of dotenv-cpp
+FETCHCONTENT_UPDATES_DISCONNECTED_DOTENV-CPP:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of jwt-cpp
+FETCHCONTENT_UPDATES_DISCONNECTED_JWT-CPP:BOOL=OFF
+
 //Enables UPDATE_DISCONNECTED behavior just for population of nlohmann_json
 FETCHCONTENT_UPDATES_DISCONNECTED_NLOHMANN_JSON:BOOL=OFF
+
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
 //The directory containing a CMake configuration file for GTest.
 GTest_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/GTest
@@ -345,6 +365,38 @@ JSON_MultipleHeaders:BOOL=ON
 //Include as system headers (skip for clang-tidy).
 JSON_SystemInclude:BOOL=OFF
 
+//Adds a target for building the doxygen documentation
+JWT_BUILD_DOCS:BOOL=OFF
+
+//Configure CMake to build examples (or not)
+JWT_BUILD_EXAMPLES:BOOL=ON
+
+//Configure CMake to build tests (or not)
+JWT_BUILD_TESTS:BOOL=OFF
+
+//Do not include the base64 implementation from this library
+JWT_DISABLE_BASE64:BOOL=OFF
+
+//Do not provide the picojson template specialiaze
+JWT_DISABLE_PICOJSON:BOOL=OFF
+
+//Enable code coverage testing
+JWT_ENABLE_COVERAGE:BOOL=OFF
+
+//Enable fuzz testing
+JWT_ENABLE_FUZZING:BOOL=OFF
+
+//Use find_package() to locate nlohman-json required for tests
+// and examples
+JWT_EXTERNAL_NLOHMANN_JSON:BOOL=OFF
+
+//Use find_package() to locate picojson, provided to integrate
+// with package managers
+JWT_EXTERNAL_PICOJSON:BOOL=OFF
+
+//Determines which SSL library to build with
+JWT_SSL_LIBRARY:STRING=OpenSSL
+
 //Path to a library.
 OPENSSL_CRYPTO_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
 
@@ -353,6 +405,9 @@ OPENSSL_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
 OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
+
+//Path to a file.
+PICOJSON_INCLUDE_DIR:PATH=PICOJSON_INCLUDE_DIR-NOTFOUND
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
@@ -396,8 +451,44 @@ crypto-hft_SOURCE_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/fmt
 
+//The directory containing a CMake configuration file for jsoncons.
+jsoncons_DIR:PATH=jsoncons_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for jsoncpp.
+jsoncpp_DIR:PATH=jsoncpp_DIR-NOTFOUND
+
+//Value Computed by CMake
+jwt-cpp-examples_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/jwt-cpp-build/example
+
+//Value Computed by CMake
+jwt-cpp-examples_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+jwt-cpp-examples_SOURCE_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/jwt-cpp-src/example
+
+//Value Computed by CMake
+jwt-cpp-traits_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/jwt-cpp-build/example/traits
+
+//Value Computed by CMake
+jwt-cpp-traits_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+jwt-cpp-traits_SOURCE_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/jwt-cpp-src/example/traits
+
+//Value Computed by CMake
+jwt-cpp_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/jwt-cpp-build
+
+//Value Computed by CMake
+jwt-cpp_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+jwt-cpp_SOURCE_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/jwt-cpp-src
+
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/nlohmann_json-build
+
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=/usr/lib/cmake/nlohmann_json
 
 //Value Computed by CMake
 nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
@@ -557,7 +648,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -620,6 +711,12 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcryp
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding ZLIB
 FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][v1.2.11()]
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake][v3.10.5()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//STRINGS property for variable: JWT_SSL_LIBRARY
+JWT_SSL_LIBRARY-STRINGS:INTERNAL=OpenSSL;LibreSSL;wolfSSL
 NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //ADVANCED property for variable: OPENSSL_CRYPTO_LIBRARY
 OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1

@@ -80,7 +80,7 @@ std::string MockExchangeAdapter::submitOrder(const OrderRequest& request) {
         std::lock_guard<std::mutex> lock(orders_mutex_);
         orders_[orderId] = OrderState{
             request,
-            "NEW",
+            utils::OrderStatus::NEW,
             0.0,
             0.0
         };
@@ -106,13 +106,13 @@ bool MockExchangeAdapter::cancelOrder(const std::string& orderId) {
     }
 
     // Only cancel if not already filled
-    if (it->second.status != "FILLED") {
-        it->second.status = "CANCELED";
+    if (it->second.status != utils::OrderStatus::FILLED) {
+        it->second.status = utils::OrderStatus::CANCELED;
         if (execution_callback_) {
             OrderResponse response{
                 orderId,
                 it->second.request.clientOrderId,
-                "CANCELED",
+                utils::OrderStatus::CANCELED,
                 it->second.filled_amount,
                 it->second.fill_price,
                 std::chrono::system_clock::now().time_since_epoch().count()
@@ -262,7 +262,7 @@ void MockExchangeAdapter::simulateOrderExecution(const std::string& orderId) {
         OrderResponse response{
             orderId,
             it->second.request.clientOrderId,
-            "NEW",
+            utils::OrderStatus::NEW,
             0.0,
             0.0,
             std::chrono::system_clock::now().time_since_epoch().count()
@@ -274,12 +274,12 @@ void MockExchangeAdapter::simulateOrderExecution(const std::string& orderId) {
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
     // Check if order was cancelled before filling
-    if (it->second.status == "CANCELED") {
+    if (it->second.status == utils::OrderStatus::CANCELED) {
         if (execution_callback_) {
             OrderResponse response{
                 orderId,
                 it->second.request.clientOrderId,
-                "CANCELED",
+                utils::OrderStatus::CANCELED,
                 0.0,
                 0.0,
                 std::chrono::system_clock::now().time_since_epoch().count()
@@ -295,13 +295,13 @@ void MockExchangeAdapter::simulateOrderExecution(const std::string& orderId) {
     
     it->second.filled_amount = fill_amount;
     it->second.fill_price = fill_price;
-    it->second.status = "FILLED";
+    it->second.status = utils::OrderStatus::FILLED;
     
     if (execution_callback_) {
         OrderResponse response{
             orderId,
             it->second.request.clientOrderId,
-            "FILLED",
+            utils::OrderStatus::FILLED,
             fill_amount,
             fill_price,
             std::chrono::system_clock::now().time_since_epoch().count()

@@ -7,6 +7,7 @@ add_executable(unit_tests
     config_manager_test.cpp
     mock_exchange_test.cpp
     MockExchangeAdapter.cpp
+    coinbase_websocket_test.cpp
 )
 
 # Link against required libraries
@@ -25,6 +26,7 @@ target_link_libraries(unit_tests
     nlohmann_json::nlohmann_json
     crypto_hft_core
     crypto_hft_infra
+    crypto_hft_exchanges
 )
 
 # Add include directories

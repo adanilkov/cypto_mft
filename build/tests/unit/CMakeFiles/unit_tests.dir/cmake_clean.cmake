@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/unit_tests.dir/MockExchangeAdapter.cpp.o"
   "CMakeFiles/unit_tests.dir/MockExchangeAdapter.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.o"
+  "CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.o.d"
   "CMakeFiles/unit_tests.dir/config_manager_test.cpp.o"
   "CMakeFiles/unit_tests.dir/config_manager_test.cpp.o.d"
   "CMakeFiles/unit_tests.dir/logger_test.cpp.o"

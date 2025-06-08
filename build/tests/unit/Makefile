@@ -209,6 +209,30 @@ MockExchangeAdapter.cpp.s:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/MockExchangeAdapter.cpp.s
 .PHONY : MockExchangeAdapter.cpp.s
 
+coinbase_websocket_test.o: coinbase_websocket_test.cpp.o
+.PHONY : coinbase_websocket_test.o
+
+# target to build an object file
+coinbase_websocket_test.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.o
+.PHONY : coinbase_websocket_test.cpp.o
+
+coinbase_websocket_test.i: coinbase_websocket_test.cpp.i
+.PHONY : coinbase_websocket_test.i
+
+# target to preprocess a source file
+coinbase_websocket_test.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.i
+.PHONY : coinbase_websocket_test.cpp.i
+
+coinbase_websocket_test.s: coinbase_websocket_test.cpp.s
+.PHONY : coinbase_websocket_test.s
+
+# target to generate assembly for a file
+coinbase_websocket_test.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.s
+.PHONY : coinbase_websocket_test.cpp.s
+
 config_manager_test.o: config_manager_test.cpp.o
 .PHONY : config_manager_test.o
 
@@ -322,6 +346,9 @@ help:
 	@echo "... MockExchangeAdapter.o"
 	@echo "... MockExchangeAdapter.i"
 	@echo "... MockExchangeAdapter.s"
+	@echo "... coinbase_websocket_test.o"
+	@echo "... coinbase_websocket_test.i"
+	@echo "... coinbase_websocket_test.s"
 	@echo "... config_manager_test.o"
 	@echo "... config_manager_test.i"
 	@echo "... config_manager_test.s"

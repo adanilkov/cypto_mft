@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../src/exchanges/IExchangeAdapter.hpp"
+#include "../../src/utils/utils.hpp"
 #include <memory>
 #include <string>
 #include <vector>
@@ -81,7 +82,7 @@ private:
     // Order tracking
     struct OrderState {
         OrderRequest request;
-        std::string status;
+        utils::OrderStatus status;
         double filled_amount;
         double fill_price;
     };
