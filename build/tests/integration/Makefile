@@ -185,6 +185,20 @@ integration_tests/fast:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/integration_tests.dir/build.make tests/integration/CMakeFiles/integration_tests.dir/build
 .PHONY : integration_tests/fast
 
+# Convenience name for target.
+tests/integration/CMakeFiles/order_book_pipeline_test.dir/rule:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/integration/CMakeFiles/order_book_pipeline_test.dir/rule
+.PHONY : tests/integration/CMakeFiles/order_book_pipeline_test.dir/rule
+
+# Convenience name for target.
+order_book_pipeline_test: tests/integration/CMakeFiles/order_book_pipeline_test.dir/rule
+.PHONY : order_book_pipeline_test
+
+# fast build rule for target.
+order_book_pipeline_test/fast:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/order_book_pipeline_test.dir/build.make tests/integration/CMakeFiles/order_book_pipeline_test.dir/build
+.PHONY : order_book_pipeline_test/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -209,6 +223,30 @@ main.cpp.s:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/integration_tests.dir/build.make tests/integration/CMakeFiles/integration_tests.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+order_book_pipeline_test.o: order_book_pipeline_test.cpp.o
+.PHONY : order_book_pipeline_test.o
+
+# target to build an object file
+order_book_pipeline_test.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/order_book_pipeline_test.dir/build.make tests/integration/CMakeFiles/order_book_pipeline_test.dir/order_book_pipeline_test.cpp.o
+.PHONY : order_book_pipeline_test.cpp.o
+
+order_book_pipeline_test.i: order_book_pipeline_test.cpp.i
+.PHONY : order_book_pipeline_test.i
+
+# target to preprocess a source file
+order_book_pipeline_test.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/order_book_pipeline_test.dir/build.make tests/integration/CMakeFiles/order_book_pipeline_test.dir/order_book_pipeline_test.cpp.i
+.PHONY : order_book_pipeline_test.cpp.i
+
+order_book_pipeline_test.s: order_book_pipeline_test.cpp.s
+.PHONY : order_book_pipeline_test.s
+
+# target to generate assembly for a file
+order_book_pipeline_test.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/order_book_pipeline_test.dir/build.make tests/integration/CMakeFiles/order_book_pipeline_test.dir/order_book_pipeline_test.cpp.s
+.PHONY : order_book_pipeline_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,9 +261,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... integration_tests"
+	@echo "... order_book_pipeline_test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... order_book_pipeline_test.o"
+	@echo "... order_book_pipeline_test.i"
+	@echo "... order_book_pipeline_test.s"
 .PHONY : help
 
 

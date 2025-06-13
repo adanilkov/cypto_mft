@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <cstdlib>  // for std::getenv
+#include <filesystem>  // for path operations
 #include <fstream>  // for file operations
 #include <openssl/evp.h>
 #include <openssl/ec.h>
@@ -16,11 +17,12 @@ namespace utils {
     bool load_env_file(const std::string& path) {
         std::ifstream env_file(path);
         if (!env_file.is_open()) {
-            // Also try the absolute path to the project root
-            std::string abs_path = "/home/adanilkovas/projects/crypto/crypto-hft/.env";
-            env_file.open(abs_path);
+            // Try the relative path from project root
+            std::filesystem::path project_root = std::filesystem::current_path();
+            std::string rel_path = (project_root / ".env").string();
+            env_file.open(rel_path);
             if (!env_file.is_open()) {
-                std::cerr << "Failed to open .env file at: " << path << " or " << abs_path << std::endl;
+                std::cerr << "Failed to open .env file at: " << path << " or " << rel_path << std::endl;
                 return false;
             }
         }

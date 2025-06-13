@@ -1,9 +1,7 @@
-# Models library
 add_library(crypto_hft_models
     SignalGenerator.cpp
 )
 
-# Link dependencies
 target_link_libraries(crypto_hft_models
     PRIVATE
     crypto_hft_utils
@@ -12,7 +10,6 @@ target_link_libraries(crypto_hft_models
     yaml-cpp
 )
 
-# Include directories
 target_include_directories(crypto_hft_models
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}

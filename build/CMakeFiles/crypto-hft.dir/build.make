@@ -97,20 +97,25 @@ crypto-hft: src/models/libcrypto_hft_models.a
 crypto-hft: src/infra/libcrypto_hft_infra.a
 crypto-hft: src/exchanges/libcrypto_hft_exchanges.a
 crypto-hft: src/utils/libcrypto_hft_utils.a
-crypto-hft: /usr/local/lib/libprometheus-cpp-pull.so.1.3.0
 crypto-hft: /usr/lib/x86_64-linux-gnu/libssl.so
 crypto-hft: /usr/lib/x86_64-linux-gnu/libcrypto.so
+crypto-hft: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.74.0
 crypto-hft: src/core/libcrypto_hft_core.a
+crypto-hft: src/core/libcrypto_hft_core.a
+crypto-hft: src/exchanges/libcrypto_hft_exchanges.a
+crypto-hft: src/infra/libcrypto_hft_infra.a
+crypto-hft: /usr/local/lib/libprometheus-cpp-pull.so.1.3.0
 crypto-hft: /usr/local/lib/libprometheus-cpp-core.so.1.3.0
+crypto-hft: /usr/lib/x86_64-linux-gnu/libssl.so
+crypto-hft: /usr/lib/x86_64-linux-gnu/libcrypto.so
+crypto-hft: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0
 crypto-hft: src/utils/libcrypto_hft_utils.a
 crypto-hft: /usr/lib/x86_64-linux-gnu/libssl.so
 crypto-hft: /usr/lib/x86_64-linux-gnu/libcrypto.so
 crypto-hft: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.9.2
 crypto-hft: /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
 crypto-hft: /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0
-crypto-hft: /usr/lib/x86_64-linux-gnu/libssl.so
-crypto-hft: /usr/lib/x86_64-linux-gnu/libcrypto.so
-crypto-hft: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0
+crypto-hft: /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.74.0
 crypto-hft: CMakeFiles/crypto-hft.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable crypto-hft"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/crypto-hft.dir/link.txt --verbose=$(VERBOSE)

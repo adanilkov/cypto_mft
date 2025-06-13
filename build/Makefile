@@ -444,6 +444,19 @@ integration_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/integration_tests.dir/build.make tests/integration/CMakeFiles/integration_tests.dir/build
 .PHONY : integration_tests/fast
 
+#=============================================================================
+# Target rules for targets named order_book_pipeline_test
+
+# Build rule for target.
+order_book_pipeline_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 order_book_pipeline_test
+.PHONY : order_book_pipeline_test
+
+# fast build rule for target.
+order_book_pipeline_test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration/CMakeFiles/order_book_pipeline_test.dir/build.make tests/integration/CMakeFiles/order_book_pipeline_test.dir/build
+.PHONY : order_book_pipeline_test/fast
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -496,6 +509,7 @@ help:
 	@echo "... integration_tests"
 	@echo "... jwks-verify"
 	@echo "... nlohmann-json"
+	@echo "... order_book_pipeline_test"
 	@echo "... partial-claim-verifier"
 	@echo "... print-claims"
 	@echo "... private-claims"

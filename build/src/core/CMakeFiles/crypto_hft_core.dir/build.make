@@ -83,17 +83,49 @@ src/core/CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.s"
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/src/core/MarketDataEngine.cpp -o CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.s
 
+src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o: src/core/CMakeFiles/crypto_hft_core.dir/flags.make
+src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o: ../src/core/OrderBook.cpp
+src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o: src/core/CMakeFiles/crypto_hft_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o -MF CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o.d -o CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o -c /home/adanilkovas/projects/crypto/crypto-hft/src/core/OrderBook.cpp
+
+src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.i"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adanilkovas/projects/crypto/crypto-hft/src/core/OrderBook.cpp > CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.i
+
+src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.s"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/src/core/OrderBook.cpp -o CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.s
+
+src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o: src/core/CMakeFiles/crypto_hft_core.dir/flags.make
+src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o: ../src/core/TradingSystem.cpp
+src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o: src/core/CMakeFiles/crypto_hft_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o -MF CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o.d -o CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o -c /home/adanilkovas/projects/crypto/crypto-hft/src/core/TradingSystem.cpp
+
+src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.i"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adanilkovas/projects/crypto/crypto-hft/src/core/TradingSystem.cpp > CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.i
+
+src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.s"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/src/core/TradingSystem.cpp -o CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.s
+
 # Object files for target crypto_hft_core
 crypto_hft_core_OBJECTS = \
-"CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.o"
+"CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.o" \
+"CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o" \
+"CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o"
 
 # External object files for target crypto_hft_core
 crypto_hft_core_EXTERNAL_OBJECTS =
 
 src/core/libcrypto_hft_core.a: src/core/CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.o
+src/core/libcrypto_hft_core.a: src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o
+src/core/libcrypto_hft_core.a: src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o
 src/core/libcrypto_hft_core.a: src/core/CMakeFiles/crypto_hft_core.dir/build.make
 src/core/libcrypto_hft_core.a: src/core/CMakeFiles/crypto_hft_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcrypto_hft_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libcrypto_hft_core.a"
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/crypto_hft_core.dir/cmake_clean_target.cmake
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/crypto_hft_core.dir/link.txt --verbose=$(VERBOSE)
 

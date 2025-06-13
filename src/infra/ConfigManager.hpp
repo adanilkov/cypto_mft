@@ -7,28 +7,33 @@
 #include <yaml-cpp/yaml.h>
 #include <filesystem>
 #include <type_traits>
+#include <vector>
 
 namespace crypto_hft {
 
 class ConfigManager {
 public:
-    static ConfigManager& getInstance();
+    static std::shared_ptr<ConfigManager> create() {
+        return std::shared_ptr<ConfigManager>(new ConfigManager());
+    }
 
-    // Load configuration from file
-    bool loadConfig(const std::filesystem::path& configPath);
+    ~ConfigManager() = default;
+    ConfigManager(const ConfigManager&) = delete; // false error here, ignore red underline
+    ConfigManager& operator=(const ConfigManager&) = delete; // false error here, ignore red underline
+
+    bool loadFromFile(const std::string& config_path);
+    bool loadFromString(const std::string& config_str);
     
-    // Get configuration values
     std::string getString(const std::string& key) const;
     int getInt(const std::string& key) const;
     double getDouble(const std::string& key) const;
     bool getBool(const std::string& key) const;
     
-    // Get configuration values with defaults
     std::string getString(const std::string& key, const std::string& defaultValue) const;
     int getInt(const std::string& key, int defaultValue) const;
+    double getDouble(const std::string& key, double defaultValue) const;
     bool getBool(const std::string& key, bool defaultValue) const;
     
-    // Template get method with default value
     template<typename T>
     T get(const std::string& key, const T& default_value) const {
         if (!has(key)) {
@@ -62,7 +67,6 @@ public:
     void registerChangeCallback(
         std::function<void(const std::string&)> callback);
     
-    // Reload configuration
     bool reloadConfig();
     
     // Reload current configuration
@@ -71,19 +75,17 @@ public:
     // Save current configuration
     bool saveConfig(const std::filesystem::path& configPath) const;
 
-private:
-    // Private constructor and destructor for singleton
+    std::vector<std::string> getStringVector(const std::string& key) const;
+    std::vector<std::string> getStringVector(const std::string& key, const std::vector<std::string>& defaultValue) const;
+
+protected:
     ConfigManager() = default;
-    ~ConfigManager() = default;
-    
-    // Prevent copying
-    ConfigManager(const ConfigManager&) = delete;
-    ConfigManager& operator=(const ConfigManager&) = delete;
-    
+
+private:
     // Configuration data
     YAML::Node config_;
     std::filesystem::path configPath_;
-    
+
     // Change callbacks
     std::vector<std::function<void(const std::string&)>> changeCallbacks_;
     
@@ -92,6 +94,8 @@ private:
     std::string getValueAsString(const std::string& key) const;
     template<typename T>
     T getValue(const std::string& key) const;
+
+    bool validateConfig() const;
 };
 
 } // namespace crypto_hft 

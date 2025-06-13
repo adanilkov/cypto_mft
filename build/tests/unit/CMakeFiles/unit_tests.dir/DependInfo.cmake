@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/adanilkovas/projects/crypto/crypto-hft/tests/unit/logger_test.cpp" "tests/unit/CMakeFiles/unit_tests.dir/logger_test.cpp.o" "gcc" "tests/unit/CMakeFiles/unit_tests.dir/logger_test.cpp.o.d"
   "/home/adanilkovas/projects/crypto/crypto-hft/tests/unit/main.cpp" "tests/unit/CMakeFiles/unit_tests.dir/main.cpp.o" "gcc" "tests/unit/CMakeFiles/unit_tests.dir/main.cpp.o.d"
   "/home/adanilkovas/projects/crypto/crypto-hft/tests/unit/mock_exchange_test.cpp" "tests/unit/CMakeFiles/unit_tests.dir/mock_exchange_test.cpp.o" "gcc" "tests/unit/CMakeFiles/unit_tests.dir/mock_exchange_test.cpp.o.d"
+  "/home/adanilkovas/projects/crypto/crypto-hft/tests/unit/orderbook_test.cpp" "tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o" "gcc" "tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o.d"
   )
 
 # Targets to which this target links.

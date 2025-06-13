@@ -25,6 +25,8 @@ Boost_INCLUDE_DIR:PATH=/usr/include
 
 Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0
 
+Boost_THREAD_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.74.0
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -306,6 +308,10 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
+// for concurrentqueue
+FETCHCONTENT_SOURCE_DIR_CONCURRENTQUEUE:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for dotenv-cpp
 FETCHCONTENT_SOURCE_DIR_DOTENV-CPP:PATH=
 
@@ -319,6 +325,9 @@ FETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of concurrentqueue
+FETCHCONTENT_UPDATES_DISCONNECTED_CONCURRENTQUEUE:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of dotenv-cpp
 FETCHCONTENT_UPDATES_DISCONNECTED_DOTENV-CPP:BOOL=OFF
@@ -424,11 +433,26 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
+//The directory containing a CMake configuration file for boost_atomic.
+boost_atomic_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.74.0
+
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0
 
 //The directory containing a CMake configuration file for boost_system.
 boost_system_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.74.0
+
+//The directory containing a CMake configuration file for boost_thread.
+boost_thread_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.74.0
+
+//Value Computed by CMake
+concurrentqueue_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/concurrentqueue-build
+
+//Value Computed by CMake
+concurrentqueue_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+concurrentqueue_SOURCE_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/concurrentqueue-src
 
 //Value Computed by CMake
 crypto-hft-tests_BINARY_DIR:STATIC=/home/adanilkovas/projects/crypto/crypto-hft/build/tests
@@ -648,7 +672,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -700,7 +724,7 @@ CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_LIBRARY_RELEASE
 CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake][cfound components: system ][v1.74.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake][cfound components: system thread ][v1.74.0(1.74.0)]
 //Details about finding CURL
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include/x86_64-linux-gnu][c ][v7.81.0()]
 //Details about finding GTest
@@ -758,8 +782,12 @@ _OPENSSL_STATIC_LIBS_OTHER:INTERNAL=
 _OPENSSL_STATIC_LIBS_PATHS:INTERNAL=
 _OPENSSL_VERSION:INTERNAL=
 __pkg_config_checked__OPENSSL:INTERNAL=1
+//ADVANCED property for variable: boost_atomic_DIR
+boost_atomic_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_headers_DIR
 boost_headers_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_system_DIR
 boost_system_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_thread_DIR
+boost_thread_DIR-ADVANCED:INTERNAL=1
 

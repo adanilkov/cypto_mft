@@ -153,6 +153,20 @@ tests/unit/CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.s"
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/tests/unit/coinbase_websocket_test.cpp -o CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.s
 
+tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o: tests/unit/CMakeFiles/unit_tests.dir/flags.make
+tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o: ../tests/unit/orderbook_test.cpp
+tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o: tests/unit/CMakeFiles/unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o -MF CMakeFiles/unit_tests.dir/orderbook_test.cpp.o.d -o CMakeFiles/unit_tests.dir/orderbook_test.cpp.o -c /home/adanilkovas/projects/crypto/crypto-hft/tests/unit/orderbook_test.cpp
+
+tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/orderbook_test.cpp.i"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adanilkovas/projects/crypto/crypto-hft/tests/unit/orderbook_test.cpp > CMakeFiles/unit_tests.dir/orderbook_test.cpp.i
+
+tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/orderbook_test.cpp.s"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/tests/unit/orderbook_test.cpp -o CMakeFiles/unit_tests.dir/orderbook_test.cpp.s
+
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/main.cpp.o" \
@@ -160,7 +174,8 @@ unit_tests_OBJECTS = \
 "CMakeFiles/unit_tests.dir/config_manager_test.cpp.o" \
 "CMakeFiles/unit_tests.dir/mock_exchange_test.cpp.o" \
 "CMakeFiles/unit_tests.dir/MockExchangeAdapter.cpp.o" \
-"CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.o"
+"CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.o" \
+"CMakeFiles/unit_tests.dir/orderbook_test.cpp.o"
 
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS =
@@ -171,6 +186,7 @@ tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/config_manager_test.
 tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/mock_exchange_test.cpp.o
 tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/MockExchangeAdapter.cpp.o
 tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/coinbase_websocket_test.cpp.o
+tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o
 tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/build.make
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libssl.so
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
@@ -179,12 +195,14 @@ tests/unit/unit_tests: src/infra/libcrypto_hft_infra.a
 tests/unit/unit_tests: src/exchanges/libcrypto_hft_exchanges.a
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libgtest_main.a
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libgtest.a
-tests/unit/unit_tests: /usr/local/lib/libprometheus-cpp-pull.so.1.3.0
 tests/unit/unit_tests: src/core/libcrypto_hft_core.a
+tests/unit/unit_tests: src/exchanges/libcrypto_hft_exchanges.a
+tests/unit/unit_tests: src/infra/libcrypto_hft_infra.a
+tests/unit/unit_tests: /usr/local/lib/libprometheus-cpp-pull.so.1.3.0
+tests/unit/unit_tests: /usr/local/lib/libprometheus-cpp-core.so.1.3.0
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libssl.so
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0
-tests/unit/unit_tests: /usr/local/lib/libprometheus-cpp-core.so.1.3.0
 tests/unit/unit_tests: src/utils/libcrypto_hft_utils.a
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.9.2
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
@@ -192,7 +210,7 @@ tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libssl.so
 tests/unit/unit_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
 tests/unit/unit_tests: tests/unit/CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable unit_tests"
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/tests/unit && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

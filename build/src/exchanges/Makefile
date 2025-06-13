@@ -185,6 +185,30 @@ crypto_hft_exchanges/fast:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build
 .PHONY : crypto_hft_exchanges/fast
 
+BinanceAdapter.o: BinanceAdapter.cpp.o
+.PHONY : BinanceAdapter.o
+
+# target to build an object file
+BinanceAdapter.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o
+.PHONY : BinanceAdapter.cpp.o
+
+BinanceAdapter.i: BinanceAdapter.cpp.i
+.PHONY : BinanceAdapter.i
+
+# target to preprocess a source file
+BinanceAdapter.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.i
+.PHONY : BinanceAdapter.cpp.i
+
+BinanceAdapter.s: BinanceAdapter.cpp.s
+.PHONY : BinanceAdapter.s
+
+# target to generate assembly for a file
+BinanceAdapter.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.s
+.PHONY : BinanceAdapter.cpp.s
+
 CoinbaseAdapter.o: CoinbaseAdapter.cpp.o
 .PHONY : CoinbaseAdapter.o
 
@@ -209,6 +233,30 @@ CoinbaseAdapter.cpp.s:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.s
 .PHONY : CoinbaseAdapter.cpp.s
 
+KrakenAdapter.o: KrakenAdapter.cpp.o
+.PHONY : KrakenAdapter.o
+
+# target to build an object file
+KrakenAdapter.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o
+.PHONY : KrakenAdapter.cpp.o
+
+KrakenAdapter.i: KrakenAdapter.cpp.i
+.PHONY : KrakenAdapter.i
+
+# target to preprocess a source file
+KrakenAdapter.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.i
+.PHONY : KrakenAdapter.cpp.i
+
+KrakenAdapter.s: KrakenAdapter.cpp.s
+.PHONY : KrakenAdapter.s
+
+# target to generate assembly for a file
+KrakenAdapter.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.s
+.PHONY : KrakenAdapter.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,9 +271,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... crypto_hft_exchanges"
+	@echo "... BinanceAdapter.o"
+	@echo "... BinanceAdapter.i"
+	@echo "... BinanceAdapter.s"
 	@echo "... CoinbaseAdapter.o"
 	@echo "... CoinbaseAdapter.i"
 	@echo "... CoinbaseAdapter.s"
+	@echo "... KrakenAdapter.o"
+	@echo "... KrakenAdapter.i"
+	@echo "... KrakenAdapter.s"
 .PHONY : help
 
 

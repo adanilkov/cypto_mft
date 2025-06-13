@@ -15,6 +15,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/adanilkovas/projects/crypto/crypto-hft/build/src/utils/CMakeFiles/crypto_hft_utils.dir/DependInfo.cmake"
   "/home/adanilkovas/projects/crypto/crypto-hft/build/src/core/CMakeFiles/crypto_hft_core.dir/DependInfo.cmake"
+  "/home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/DependInfo.cmake"
+  "/home/adanilkovas/projects/crypto/crypto-hft/build/src/infra/CMakeFiles/crypto_hft_infra.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

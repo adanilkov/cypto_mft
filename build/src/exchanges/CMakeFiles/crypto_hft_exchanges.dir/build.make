@@ -83,17 +83,49 @@ src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.s"
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/CoinbaseAdapter.cpp -o CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.s
 
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/flags.make
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o: ../src/exchanges/BinanceAdapter.cpp
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o -MF CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o.d -o CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o -c /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/BinanceAdapter.cpp
+
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.i"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/BinanceAdapter.cpp > CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.i
+
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.s"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/BinanceAdapter.cpp -o CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.s
+
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/flags.make
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o: ../src/exchanges/KrakenAdapter.cpp
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o -MF CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o.d -o CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o -c /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/KrakenAdapter.cpp
+
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.i"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/KrakenAdapter.cpp > CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.i
+
+src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.s"
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/KrakenAdapter.cpp -o CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.s
+
 # Object files for target crypto_hft_exchanges
 crypto_hft_exchanges_OBJECTS = \
-"CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o"
+"CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o" \
+"CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o" \
+"CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o"
 
 # External object files for target crypto_hft_exchanges
 crypto_hft_exchanges_EXTERNAL_OBJECTS =
 
 src/exchanges/libcrypto_hft_exchanges.a: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o
+src/exchanges/libcrypto_hft_exchanges.a: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o
+src/exchanges/libcrypto_hft_exchanges.a: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o
 src/exchanges/libcrypto_hft_exchanges.a: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/build.make
 src/exchanges/libcrypto_hft_exchanges.a: src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcrypto_hft_exchanges.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adanilkovas/projects/crypto/crypto-hft/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libcrypto_hft_exchanges.a"
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && $(CMAKE_COMMAND) -P CMakeFiles/crypto_hft_exchanges.dir/cmake_clean_target.cmake
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build/src/exchanges && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/crypto_hft_exchanges.dir/link.txt --verbose=$(VERBOSE)
 

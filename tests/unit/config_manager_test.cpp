@@ -45,8 +45,9 @@ risk:
         std::cout << "YAML file content written to: " << config_file_ << std::endl;
         std::cout << std::string((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>()) << std::endl;
 
-        // Reset config manager and verify load
-        if (!ConfigManager::getInstance().loadConfig(config_file_.string())) {
+        // Create config manager and verify load
+        config_manager_ = ConfigManager::create();
+        if (!config_manager_->loadFromFile(config_file_.string())) {
             throw std::runtime_error("Failed to load config file");
         }
     }
@@ -58,44 +59,44 @@ risk:
         }
     }
 
-    ConfigManager& config_manager_ = ConfigManager::getInstance();
+    std::shared_ptr<ConfigManager> config_manager_;
     std::filesystem::path config_file_;
 };
 
 TEST_F(ConfigManagerTest, GetString) {
-    EXPECT_EQ(config_manager_.getString("exchange.binance.api_key"), "test_api_key_123");
-    EXPECT_EQ(config_manager_.getString("trading.strategy"), "momentum");
+    EXPECT_EQ(config_manager_->getString("exchange.binance.api_key"), "test_api_key_123");
+    EXPECT_EQ(config_manager_->getString("trading.strategy"), "momentum");
 }
 
 TEST_F(ConfigManagerTest, GetInt) {
-    EXPECT_EQ(config_manager_.getInt("exchange.binance.max_orders"), 100);
-    EXPECT_EQ(config_manager_.getInt("risk.max_leverage"), 20);
+    EXPECT_EQ(config_manager_->getInt("exchange.binance.max_orders"), 100);
+    EXPECT_EQ(config_manager_->getInt("risk.max_leverage"), 20);
 }
 
 TEST_F(ConfigManagerTest, GetBool) {
-    EXPECT_TRUE(config_manager_.getBool("exchange.binance.testnet"));
-    EXPECT_TRUE(config_manager_.getBool("trading.enabled"));
+    EXPECT_TRUE(config_manager_->getBool("exchange.binance.testnet"));
+    EXPECT_TRUE(config_manager_->getBool("trading.enabled"));
 }
 
 TEST_F(ConfigManagerTest, GetDouble) {
-    EXPECT_DOUBLE_EQ(config_manager_.getDouble("risk.stop_loss_pct"), 0.02);
-    EXPECT_DOUBLE_EQ(config_manager_.getDouble("risk.take_profit_pct"), 0.05);
+    EXPECT_DOUBLE_EQ(config_manager_->getDouble("risk.stop_loss_pct"), 0.02);
+    EXPECT_DOUBLE_EQ(config_manager_->getDouble("risk.take_profit_pct"), 0.05);
 }
 
 TEST_F(ConfigManagerTest, GetWithDefault) {
-    EXPECT_EQ(config_manager_.getString("nonexistent.key", "default"), "default");
-    EXPECT_EQ(config_manager_.getInt("nonexistent.key", 42), 42);
-    EXPECT_FALSE(config_manager_.getBool("nonexistent.key", false));
+    EXPECT_EQ(config_manager_->getString("nonexistent.key", "default"), "default");
+    EXPECT_EQ(config_manager_->getInt("nonexistent.key", 42), 42);
+    EXPECT_FALSE(config_manager_->getBool("nonexistent.key", false));
 }
 
 TEST_F(ConfigManagerTest, MissingKeyThrows) {
-    EXPECT_THROW(config_manager_.getString("nonexistent.key"), std::runtime_error);
-    EXPECT_THROW(config_manager_.getInt("nonexistent.key"), std::runtime_error);
+    EXPECT_THROW(config_manager_->getString("nonexistent.key"), std::runtime_error);
+    EXPECT_THROW(config_manager_->getInt("nonexistent.key"), std::runtime_error);
 }
 
 TEST_F(ConfigManagerTest, HasKey) {
-    EXPECT_TRUE(config_manager_.has("exchange.binance.api_key"));
-    EXPECT_FALSE(config_manager_.has("nonexistent.key"));
+    EXPECT_TRUE(config_manager_->has("exchange.binance.api_key"));
+    EXPECT_FALSE(config_manager_->has("nonexistent.key"));
 }
 
 TEST_F(ConfigManagerTest, Reload) {
@@ -105,8 +106,8 @@ TEST_F(ConfigManagerTest, Reload) {
     config_file.close();
 
     // Reload and check new value
-    config_manager_.reload();
-    EXPECT_EQ(config_manager_.getString("new_key"), "new_value");
+    config_manager_->reload();
+    EXPECT_EQ(config_manager_->getString("new_key"), "new_value");
 }
 
 } // namespace test

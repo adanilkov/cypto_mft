@@ -12,24 +12,22 @@
 
 namespace crypto_hft {
 
-CoinbaseAdapter::CoinbaseAdapter(const std::string& config_path)
+CoinbaseAdapter::CoinbaseAdapter()
     : ctx_(ssl::context::tls_client)
     , work_guard_(ioc_.get_executor())
     , strand_(net::make_strand(ioc_))
 {
     initialize_logger();
-    load_config(config_path);
-    validate_config();
+    // load_config(config_path);
+    // validate_config();
     
-    // Configure SSL context
+    // SSL context
     ctx_.set_options(ssl::context::default_workarounds | ssl::context::no_sslv2 | ssl::context::no_sslv3 | ssl::context::single_dh_use);
     ctx_.set_verify_mode(ssl::verify_peer);
     ctx_.set_default_verify_paths();
     
-    // Create WebSocket stream
     ws_ = std::make_unique<websocket::stream<beast::ssl_stream<tcp::socket>>>(strand_, ctx_);
     
-    // Use consistent host name for SNI and handshake
     host_ = "advanced-trade-ws.coinbase.com";
     SSL_set_tlsext_host_name(ws_->next_layer().native_handle(), host_.c_str());
     
@@ -61,22 +59,40 @@ bool CoinbaseAdapter::connect() {
         // Resolve the host
         tcp::resolver resolver(ioc_);
         auto const results = resolver.resolve(host_, "443");
-
-        // Connect to the host
         auto& lowest_layer = beast::get_lowest_layer(*ws_);
         lowest_layer.connect(results.begin()->endpoint());
 
-        // Perform the SSL handshake
+        // SSL handshake
         ws_->next_layer().handshake(ssl::stream_base::client);
 
-        // Perform the WebSocket handshake
+        // WebSocket handshake
         ws_->handshake(host_, "/");
+
+        // Authenticate with Coinbase
+        try {
+            std::string jwt_token = crypto_hft::utils::coinbase_create_jwt();
+            json auth_msg = {
+                {"type", "authenticate"},
+                {"token", jwt_token}
+            };
+            
+            // Send authentication message
+            do_write(auth_msg.dump());
+            logger_->info("Sent authentication request to Coinbase");
+            
+            // Note: The actual authentication success/failure will be handled in on_message
+            // when we receive the authenticate response
+        } catch (const std::exception& e) {
+            logger_->error("Failed to authenticate: {}", e.what());
+            disconnect();
+            return false;
+        }
 
         connected_ = true;
         logger_->info("Successfully connected to Coinbase WebSocket");
 
-        // Start reading messages
-        do_read();
+        // Start reading
+        do_read(); 
         
         return true;
     } catch (const std::exception& e) {
@@ -142,7 +158,7 @@ bool CoinbaseAdapter::subscribe(const std::vector<std::string>& symbols) {
         do_write(message);
         logger_->info("Subscribed to symbols: {}", json(symbols).dump());
         return true;
-    } catch (const std::exception& e) {
+    } catch (const std::exception& e) { 
         logger_->error("Failed to subscribe: {}", e.what());
         return false;
     }
@@ -225,16 +241,21 @@ void CoinbaseAdapter::on_message(beast::error_code ec, [[maybe_unused]] std::siz
                 if (data.contains("details")) {
                     logger_->error("Error details: {}", data["details"].get<std::string>());
                 }
+                // If authentication failed, disconnect
+                if (data.contains("error") && data["error"].get<std::string>() == "authentication_failed") {
+                    disconnect();
+                }
                 return;
             }
             
             if (type == "authenticate") {
                 if (data.contains("success") && data["success"].get<bool>()) {
                     logger_->info("Successfully authenticated with Coinbase");
-                    // Now that we're authenticated, send the subscription message
-                    subscribe({"BTC-USD"});
+                    authenticated_ = true;
                 } else {
                     logger_->error("Authentication failed: {}", message);
+                    authenticated_ = false;
+                    disconnect();
                 }
                 return;
             }
@@ -286,10 +307,6 @@ void CoinbaseAdapter::load_config(const std::string& config_path) {
     }
 }
 
-void CoinbaseAdapter::validate_config() const {
-    // For public feed, we don't need to validate API credentials
-}
-
 void CoinbaseAdapter::handle_websocket_message(const std::string& message) {
     try {
         json data = json::parse(message);
@@ -327,24 +344,27 @@ void CoinbaseAdapter::handle_websocket_message(const std::string& message) {
     }
 }
 
-void CoinbaseAdapter::handle_ticker_message(const json& data) {
-    try {
-        MarketData ticker;
-        ticker.symbol = data["product_id"];
-        ticker.bidPrice = data.contains("best_bid") ? std::stod(data["best_bid"].get<std::string>()) : 0.0;
-        ticker.bidSize = data.contains("best_bid_size") ? std::stod(data["best_bid_size"].get<std::string>()) : 0.0;
-        ticker.askPrice = data.contains("best_ask") ? std::stod(data["best_ask"].get<std::string>()) : 0.0;
-        ticker.askSize = data.contains("best_ask_size") ? std::stod(data["best_ask_size"].get<std::string>()) : 0.0;
-        ticker.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
-            std::chrono::system_clock::now().time_since_epoch()
-        ).count();
+// void CoinbaseAdapter::handle_ticker_message(const json& data) {
+//     try {
+//         MarketData ticker;
+//         ticker.symbol = data["product_id"];
+//         ticker.bidPrice = data.contains("best_bid") ? std::stod(data["best_bid"].get<std::string>()) : 0.0;
+//         ticker.bidSize = data.contains("best_bid_size") ? std::stod(data["best_bid_size"].get<std::string>()) : 0.0;
+//         ticker.askPrice = data.contains("best_ask") ? std::stod(data["best_ask"].get<std::string>()) : 0.0;
+//         ticker.askSize = data.contains("best_ask_size") ? std::stod(data["best_ask_size"].get<std::string>()) : 0.0;
+//         ticker.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+//             std::chrono::system_clock::now().time_since_epoch()
+//         ).count();
         
-        if (market_data_handler_) {
-            market_data_handler_(ticker);
-        }
-    } catch (const std::exception& e) {
-        logger_->error("Error handling ticker message: {}", e.what());
-    }
+//         if (market_data_handler_) {
+//             market_data_handler_(ticker);
+//         }
+//     } catch (const std::exception& e) {
+//         logger_->error("Error handling ticker message: {}", e.what());
+//     }
+// }
+void CoinbaseAdapter::handle_ticker_message(const json& data) {
+    logger_->debug("Received ticker message: {}", data.dump());
 }
 
 void CoinbaseAdapter::handle_snapshot_message(const json& data) {
@@ -407,7 +427,6 @@ void CoinbaseAdapter::handle_l2update_message(const json& data) {
 
 void CoinbaseAdapter::handle_heartbeat_message(const json& data) {
     try {
-        // Heartbeats don't need a handler as they're just for connection health
         logger_->debug("Received heartbeat for product: {}", data["product_id"].get<std::string>());
     } catch (const std::exception& e) {
         logger_->error("Error handling heartbeat message: {}", e.what());
@@ -445,7 +464,7 @@ void CoinbaseAdapter::registerExecutionCallback(std::function<void(const OrderRe
 }
 
 // Implement other interface methods with default values
-std::string CoinbaseAdapter::getName() const { return "Coinbase"; }
+std::string CoinbaseAdapter::getName() const { return "coinbase"; }
 bool CoinbaseAdapter::supportsMargin() const { return false; }
 double CoinbaseAdapter::getFeeRate(const std::string&) const { return 0.005; } // 0.5% default fee
 double CoinbaseAdapter::getBalance(const std::string&) const { return 0.0; }

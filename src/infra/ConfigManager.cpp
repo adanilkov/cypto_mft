@@ -2,52 +2,42 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <spdlog/spdlog.h>
 
 namespace crypto_hft {
 
-ConfigManager& ConfigManager::getInstance() {
-    static ConfigManager instance;
-    return instance;
+bool ConfigManager::loadFromFile(const std::string& config_path) {
+    try {
+        configPath_ = std::filesystem::path(config_path);
+        config_ = YAML::LoadFile(config_path);
+        return validateConfig();
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to load config from file {}: {}", config_path, e.what());
+        return false;
+    }
 }
 
-bool ConfigManager::loadConfig(const std::filesystem::path& configPath) {
+bool ConfigManager::loadFromString(const std::string& config_str) {
     try {
-        if (!std::filesystem::exists(configPath)) {
-            throw std::runtime_error("Config file does not exist: " + configPath.string());
+        spdlog::debug("Loading config from string: {}", config_str);
+        config_ = YAML::Load(config_str);
+        spdlog::debug("Config loaded successfully. Root node type: {}", config_.Type());
+        if (config_.IsMap()) {
+            spdlog::debug("Config is a map with {} keys", config_.size());
+            for (const auto& pair : config_) {
+                spdlog::debug("Key: {}, Type: {}", pair.first.as<std::string>(), pair.second.Type());
+            }
         }
-
-        std::ifstream file(configPath);
-        if (!file.is_open()) {
-            throw std::runtime_error("Failed to open config file: " + configPath.string());
-        }
-
-        // Read the entire file into a string
-        std::stringstream buffer;
-        buffer << file.rdbuf();
-        std::string content = buffer.str();
-
-        if (content.empty()) {
-            throw std::runtime_error("Config file is empty: " + configPath.string());
-        }
-
-        // Parse the YAML content
-        config_ = YAML::Load(content);
-        if (!config_.IsMap()) {
-            throw std::runtime_error("Invalid config file format: root must be a map");
-        }
-
-        configPath_ = configPath;
-        return true;
-    } catch (const YAML::Exception& e) {
-        throw std::runtime_error("Failed to load config file: " + std::string(e.what()));
+        return validateConfig();
     } catch (const std::exception& e) {
-        throw std::runtime_error("Failed to load config file: " + std::string(e.what()));
+        spdlog::error("Failed to load config from string: {}", e.what());
+        return false;
     }
 }
 
 void ConfigManager::reload() {
     if (!configPath_.empty()) {
-        loadConfig(configPath_);
+        loadFromFile(configPath_.string());
     }
 }
 
@@ -60,19 +50,26 @@ YAML::Node ConfigManager::getNode(const std::string& key) const {
     std::istringstream iss(key);
     std::string token;
     YAML::Node node = YAML::Clone(config_);  // Make a deep copy of the root node
+    spdlog::debug("Getting node for key: {}", key);
+    spdlog::debug("Initial node type: {}", node.Type());
 
-    while (std::getline(iss, token, '.')) {
+    while (std::getline(iss, token, '.'), !token.empty()) {
+        spdlog::debug("Processing token: {}", token);
         if (!node.IsMap()) {
+            spdlog::debug("Node is not a map, returning empty node");
             return YAML::Node();
         }
 
         if (!node[token].IsDefined()) {
+            spdlog::debug("Token '{}' not found in node", token);
             return YAML::Node();
         }
 
         node = YAML::Clone(node[token]);  // Make a deep copy of the next node
+        spdlog::debug("Node type after token '{}': {}", token, node.Type());
     }
 
+    spdlog::debug("Final node type: {}", node.Type());
     return node;
 }
 
@@ -108,28 +105,67 @@ bool ConfigManager::getBool(const std::string& key) const {
     return node.as<bool>();
 }
 
-std::string ConfigManager::getString(const std::string& key, const std::string& defaultValue) const {
+std::string ConfigManager::getString(const std::string& key, const std::string& default_value) const {
     try {
         return getString(key);
-    } catch (const std::runtime_error&) {
-        return defaultValue;
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to get string for key {}: {}", key, e.what());
+        return default_value;
     }
 }
 
-int ConfigManager::getInt(const std::string& key, int defaultValue) const {
+int ConfigManager::getInt(const std::string& key, int default_value) const {
     try {
         return getInt(key);
-    } catch (const std::runtime_error&) {
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to get int for key {}: {}", key, e.what());
+        return default_value;
+    }
+}
+
+double ConfigManager::getDouble(const std::string& key, double default_value) const {
+    try {
+        return getDouble(key);
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to get double for key {}: {}", key, e.what());
+        return default_value;
+    }
+}
+
+bool ConfigManager::getBool(const std::string& key, bool default_value) const {
+    try {
+        return getBool(key);
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to get bool for key {}: {}", key, e.what());
+        return default_value;
+    }
+}
+
+std::vector<std::string> ConfigManager::getStringVector(const std::string& key) const {
+    try {
+        YAML::Node node = getNode(key);
+        if (!node.IsDefined() || !node.IsSequence()) {
+            throw std::runtime_error("Key not found or not a sequence: " + key);
+        }
+        return node.as<std::vector<std::string>>();
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to get string vector for key {}: {}", key, e.what());
+        return {};
+    }
+}
+
+std::vector<std::string> ConfigManager::getStringVector(const std::string& key, const std::vector<std::string>& defaultValue) const {
+    try {
+        return getStringVector(key);
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to get string vector for key {}: {}", key, e.what());
         return defaultValue;
     }
 }
 
-bool ConfigManager::getBool(const std::string& key, bool defaultValue) const {
-    try {
-        return getBool(key);
-    } catch (const std::runtime_error&) {
-        return defaultValue;
-    }
+bool ConfigManager::validateConfig() const {
+    // Add any necessary validation here
+    return true;
 }
 
 } // namespace crypto_hft 

@@ -54,7 +54,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/adanilkovas/projects/crypto/crypto-hft/build/_deps/concurrentqueue-build/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/adanilkovas/projects/crypto/crypto-hft/build/src/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/adanilkovas/projects/crypto/crypto-hft/build/tests/cmake_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -79,11 +89,6 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/crypto-hft" TYPE DIRECTORY FILES "/home/adanilkovas/projects/crypto/crypto-hft/configs/")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/adanilkovas/projects/crypto/crypto-hft/build/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

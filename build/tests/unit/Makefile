@@ -329,6 +329,30 @@ mock_exchange_test.cpp.s:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/mock_exchange_test.cpp.s
 .PHONY : mock_exchange_test.cpp.s
 
+orderbook_test.o: orderbook_test.cpp.o
+.PHONY : orderbook_test.o
+
+# target to build an object file
+orderbook_test.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.o
+.PHONY : orderbook_test.cpp.o
+
+orderbook_test.i: orderbook_test.cpp.i
+.PHONY : orderbook_test.i
+
+# target to preprocess a source file
+orderbook_test.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.i
+.PHONY : orderbook_test.cpp.i
+
+orderbook_test.s: orderbook_test.cpp.s
+.PHONY : orderbook_test.s
+
+# target to generate assembly for a file
+orderbook_test.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f tests/unit/CMakeFiles/unit_tests.dir/build.make tests/unit/CMakeFiles/unit_tests.dir/orderbook_test.cpp.s
+.PHONY : orderbook_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -361,6 +385,9 @@ help:
 	@echo "... mock_exchange_test.o"
 	@echo "... mock_exchange_test.i"
 	@echo "... mock_exchange_test.s"
+	@echo "... orderbook_test.o"
+	@echo "... orderbook_test.i"
+	@echo "... orderbook_test.s"
 .PHONY : help
 
 

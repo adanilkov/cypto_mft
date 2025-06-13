@@ -1,0 +1,21 @@
+exchange:
+  binance:
+    enabled: false
+  
+  coinbase:
+    enabled: true
+    
+  kraken:
+    enabled: false
+
+symbols: ["BTC-USD"]
+
+risk:
+  stop_loss_pct:
+  take_profit_pct:
+
+trading:
+  enabled: true
+  strategy: "strat1"
+  timeframe: "15m" # 1m, 5m, 15m, 30m, 45m, 1hr, 4hr
+  

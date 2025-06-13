@@ -1,0 +1,144 @@
+=-=-=-=-= MODEL 1 =-=-=-=-=
+
+//@version=5
+indicator("Advanced MA Crossover with RSI Filter", shorttitle="AMAC-RSI", overlay=true)
+
+// ============================================================================
+// INPUT PARAMETERS
+// ============================================================================
+
+// Moving Average Settings
+ma_type = input.string("EMA", "MA Type", options=["SMA", "EMA", "WMA", "VWMA"], group="Moving Average Settings")
+fast_length = input.int(20, "Fast MA Period", minval=1, group="Moving Average Settings")
+slow_length = input.int(50, "Slow MA Period", minval=1, group="Moving Average Settings")
+
+// RSI Filter Settings
+use_rsi_filter = input.bool(true, "Use RSI Filter", group="RSI Filter Settings")
+rsi_length = input.int(14, "RSI Period", minval=1, group="RSI Filter Settings")
+rsi_oversold = input.int(30, "RSI Oversold Level", minval=1, maxval=50, group="RSI Filter Settings")
+rsi_overbought = input.int(70, "RSI Overbought Level", minval=50, maxval=99, group="RSI Filter Settings")
+
+// Alert Settings
+enable_alerts = input.bool(true, "Enable Alerts", group="Alert Settings")
+show_labels = input.bool(true, "Show BUY/SELL Labels", group="Visual Settings")
+show_ma_lines = input.bool(true, "Show MA Lines", group="Visual Settings")
+show_info_table = input.bool(true, "Show Info Table", group="Visual Settings")
+
+// ============================================================================
+// CALCULATIONS
+// ============================================================================
+
+// Moving Average Calculation Function
+get_ma(source, length, ma_type) =>
+    switch ma_type
+        "SMA" => ta.sma(source, length)
+        "EMA" => ta.ema(source, length)
+        "WMA" => ta.wma(source, length)
+        "VWMA" => ta.vwma(source, length)
+        => ta.ema(source, length)
+
+// Moving Averages
+fast_ma = get_ma(close, fast_length, ma_type)
+slow_ma = get_ma(close, slow_length, ma_type)
+
+// RSI Calculation
+rsi = ta.rsi(close, rsi_length)
+
+// ============================================================================
+// SIGNAL LOGIC
+// ============================================================================
+
+// Basic MA Crossover Signals
+ma_cross_up = ta.crossover(fast_ma, slow_ma)
+ma_cross_down = ta.crossunder(fast_ma, slow_ma)
+
+// RSI Filter
+rsi_bullish = not use_rsi_filter or (rsi > rsi_oversold and rsi < rsi_overbought)
+rsi_bearish = not use_rsi_filter or (rsi < rsi_overbought and rsi > rsi_oversold)
+
+// Trend Filter (Price above/below MAs)
+price_above_mas = close > fast_ma and close > slow_ma
+price_below_mas = close < fast_ma and close < slow_ma
+
+// Final Signals
+long_signal = ma_cross_up and rsi_bullish and price_above_mas
+short_signal = ma_cross_down and rsi_bearish and price_below_mas
+
+// ============================================================================
+// ALERT SYSTEM
+// ============================================================================
+
+// BUY Signal Alert
+if long_signal and enable_alerts
+    alert("🟢 BUY SIGNAL: " + syminfo.ticker + " - Price: " + str.tostring(close, "#.##") + " - MA Cross Up + RSI Filter", alert.freq_once_per_bar)
+
+// SELL Signal Alert
+if short_signal and enable_alerts
+    alert("🔴 SELL SIGNAL: " + syminfo.ticker + " - Price: " + str.tostring(close, "#.##") + " - MA Cross Down + RSI Filter", alert.freq_once_per_bar)
+
+// ============================================================================
+// VISUALIZATION
+// ============================================================================
+
+// MA Lines
+plot(show_ma_lines ? fast_ma : na, "Fast MA", color=color.blue, linewidth=2)
+plot(show_ma_lines ? slow_ma : na, "Slow MA", color=color.red, linewidth=2)
+
+// MA Fill Area
+fill_color = fast_ma > slow_ma ? color.new(color.green, 90) : color.new(color.red, 90)
+fill(plot(fast_ma), plot(slow_ma), color=fill_color, title="MA Fill")
+
+// BUY/SELL Labels
+if show_labels and long_signal
+    label.new(bar_index, low - (high - low) * 0.1, "BUY\n💰", 
+              color=color.green, textcolor=color.white, 
+              style=label.style_label_up, size=size.normal)
+
+if show_labels and short_signal
+    label.new(bar_index, high + (high - low) * 0.1, "SELL\n📉", 
+              color=color.red, textcolor=color.white, 
+              style=label.style_label_down, size=size.normal)
+
+// ============================================================================
+// INFORMATION TABLE
+// ============================================================================
+
+if show_info_table and barstate.islast
+    var table info_table = table.new(position.top_right, 2, 6, bgcolor=color.white, border_width=1)
+    
+    table.cell(info_table, 0, 0, "Parameter", text_color=color.black, bgcolor=color.gray)
+    table.cell(info_table, 1, 0, "Value", text_color=color.black, bgcolor=color.gray)
+    
+    table.cell(info_table, 0, 1, "Fast MA", text_color=color.black)
+    table.cell(info_table, 1, 1, str.tostring(fast_length) + " " + ma_type, text_color=color.blue)
+    
+    table.cell(info_table, 0, 2, "Slow MA", text_color=color.black)
+    table.cell(info_table, 1, 2, str.tostring(slow_length) + " " + ma_type, text_color=color.red)
+    
+    table.cell(info_table, 0, 3, "RSI", text_color=color.black)
+    table.cell(info_table, 1, 3, str.tostring(math.round(rsi, 2)), text_color=color.purple)
+    
+    table.cell(info_table, 0, 4, "Trend", text_color=color.black)
+    trend_text = fast_ma > slow_ma ? "UP ⬆️" : "DOWN ⬇️"
+    trend_color = fast_ma > slow_ma ? color.green : color.red
+    table.cell(info_table, 1, 4, trend_text, text_color=trend_color)
+    
+    table.cell(info_table, 0, 5, "Last Signal", text_color=color.black)
+    signal_text = long_signal ? "BUY 🟢" : short_signal ? "SELL 🔴" : "NONE ⚪"
+    signal_color = long_signal ? color.green : short_signal ? color.red : color.gray
+    table.cell(info_table, 1, 5, signal_text, text_color=signal_color)
+
+// ============================================================================
+// SIGNAL SHAPES
+// ============================================================================
+
+// BUY/SELL signals as shapes
+plotshape(long_signal, title="BUY Signal", location=location.belowbar, color=color.green, style=shape.triangleup, size=size.small)
+plotshape(short_signal, title="SELL Signal", location=location.abovebar, color=color.red, style=shape.triangledown, size=size.small)
+
+
+
+
+
+
+=-=-=-=-= MODEL 2 =-=-=-=-=

@@ -4,12 +4,11 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <queue>
-#include <mutex>
 #include <atomic>
 #include <functional>
 #include <thread>
-#include <condition_variable>
+#include <concurrentqueue.h>
+#include <spdlog/spdlog.h>
 
 #include "../exchanges/IExchangeAdapter.hpp"
 #include "OrderBook.hpp"
@@ -28,25 +27,21 @@ struct MarketUpdate {
 
 class MarketDataEngine {
 public:
-    MarketDataEngine();
+    explicit MarketDataEngine(std::vector<std::shared_ptr<IExchangeAdapter>> adapters);
     ~MarketDataEngine();
 
-    // Initialize connections to exchanges
     void initialize(const std::vector<std::string>& symbols);
-    
-    // Subscribe to market data for specific symbols
-    void subscribe(const std::vector<std::string>& symbols);
-    
-    // Register callback for market updates
+    void stop();
     void registerCallback(std::function<void(const MarketUpdate&)> callback);
-    
-    // Get current order book for a symbol
     std::shared_ptr<OrderBook> getOrderBook(const std::string& symbol);
+    const std::function<void(const MarketUpdate&)>& getUpdateCallback() const { return updateCallback_; }
 
 private:
     // Internal thread functions
     void receiverThread(std::shared_ptr<IExchangeAdapter> adapter);
     void dispatcherThread();
+    void handleOrderBookSnapshot(const OrderBookSnapshot& snapshot);
+    void handleOrderBookDelta(const OrderBookDelta& delta);
 
     // Exchange adapters
     std::vector<std::shared_ptr<IExchangeAdapter>> adapters_;
@@ -54,13 +49,8 @@ private:
     // Order books per symbol
     std::unordered_map<std::string, std::shared_ptr<OrderBook>> orderBooks_;
     
-    // Thread-safe queue for market updates
-    struct UpdateQueue {
-        std::queue<MarketUpdate> queue;
-        std::mutex mutex;
-        std::condition_variable cv;
-    };
-    std::vector<std::unique_ptr<UpdateQueue>> updateQueues_;
+    // Lock-free queue for market updates
+    moodycamel::ConcurrentQueue<MarketUpdate> updateQueue_;
     
     // Callback for market updates
     std::function<void(const MarketUpdate&)> updateCallback_;
@@ -72,6 +62,9 @@ private:
     
     // Synchronization
     std::mutex orderBooksMutex_;
+    
+    // Logging
+    std::shared_ptr<spdlog::logger> logger_;
 };
 
 } // namespace crypto_hft 

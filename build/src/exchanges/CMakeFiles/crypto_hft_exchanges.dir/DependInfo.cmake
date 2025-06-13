@@ -8,13 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/BinanceAdapter.cpp" "src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o" "gcc" "src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/BinanceAdapter.cpp.o.d"
   "/home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/CoinbaseAdapter.cpp" "src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o" "gcc" "src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/CoinbaseAdapter.cpp.o.d"
+  "/home/adanilkovas/projects/crypto/crypto-hft/src/exchanges/KrakenAdapter.cpp" "src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o" "gcc" "src/exchanges/CMakeFiles/crypto_hft_exchanges.dir/KrakenAdapter.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/adanilkovas/projects/crypto/crypto-hft/build/src/utils/CMakeFiles/crypto_hft_utils.dir/DependInfo.cmake"
   "/home/adanilkovas/projects/crypto/crypto-hft/build/src/core/CMakeFiles/crypto_hft_core.dir/DependInfo.cmake"
+  "/home/adanilkovas/projects/crypto/crypto-hft/build/src/infra/CMakeFiles/crypto_hft_infra.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

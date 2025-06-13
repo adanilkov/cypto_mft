@@ -8,6 +8,7 @@ add_executable(unit_tests
     mock_exchange_test.cpp
     MockExchangeAdapter.cpp
     coinbase_websocket_test.cpp
+    orderbook_test.cpp
 )
 
 # Link against required libraries

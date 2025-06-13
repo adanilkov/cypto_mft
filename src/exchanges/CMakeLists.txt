@@ -1,9 +1,10 @@
 # Exchanges library
 add_library(crypto_hft_exchanges
     CoinbaseAdapter.cpp
+    BinanceAdapter.cpp
+    KrakenAdapter.cpp
     # BybitAdapter.cpp
     # OKXAdapter.cpp
-    # KrakenAdapter.cpp
     # ExchangeUtils.cpp
 )
 

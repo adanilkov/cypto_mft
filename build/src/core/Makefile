@@ -209,6 +209,54 @@ MarketDataEngine.cpp.s:
 	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/MarketDataEngine.cpp.s
 .PHONY : MarketDataEngine.cpp.s
 
+OrderBook.o: OrderBook.cpp.o
+.PHONY : OrderBook.o
+
+# target to build an object file
+OrderBook.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.o
+.PHONY : OrderBook.cpp.o
+
+OrderBook.i: OrderBook.cpp.i
+.PHONY : OrderBook.i
+
+# target to preprocess a source file
+OrderBook.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.i
+.PHONY : OrderBook.cpp.i
+
+OrderBook.s: OrderBook.cpp.s
+.PHONY : OrderBook.s
+
+# target to generate assembly for a file
+OrderBook.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/OrderBook.cpp.s
+.PHONY : OrderBook.cpp.s
+
+TradingSystem.o: TradingSystem.cpp.o
+.PHONY : TradingSystem.o
+
+# target to build an object file
+TradingSystem.cpp.o:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.o
+.PHONY : TradingSystem.cpp.o
+
+TradingSystem.i: TradingSystem.cpp.i
+.PHONY : TradingSystem.i
+
+# target to preprocess a source file
+TradingSystem.cpp.i:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.i
+.PHONY : TradingSystem.cpp.i
+
+TradingSystem.s: TradingSystem.cpp.s
+.PHONY : TradingSystem.s
+
+# target to generate assembly for a file
+TradingSystem.cpp.s:
+	cd /home/adanilkovas/projects/crypto/crypto-hft/build && $(MAKE) $(MAKESILENT) -f src/core/CMakeFiles/crypto_hft_core.dir/build.make src/core/CMakeFiles/crypto_hft_core.dir/TradingSystem.cpp.s
+.PHONY : TradingSystem.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -226,6 +274,12 @@ help:
 	@echo "... MarketDataEngine.o"
 	@echo "... MarketDataEngine.i"
 	@echo "... MarketDataEngine.s"
+	@echo "... OrderBook.o"
+	@echo "... OrderBook.i"
+	@echo "... OrderBook.s"
+	@echo "... TradingSystem.o"
+	@echo "... TradingSystem.i"
+	@echo "... TradingSystem.s"
 .PHONY : help
 
 

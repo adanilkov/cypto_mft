@@ -15,24 +15,7 @@
 
 namespace crypto_hft {
 
-struct OrderRequest {
-    std::string symbol;
-    enum class Side { BUY, SELL } side;
-    enum class Type { MARKET, LIMIT } type;
-    double price;  // For limit orders
-    double size;
-    std::string clientOrderId;
-    int64_t timestamp;
-};
-
-struct OrderResponse {
-    std::string orderId;
-    std::string clientOrderId;
-    std::string status;  // NEW, PARTIALLY_FILLED, FILLED, CANCELED, REJECTED
-    double filledAmount;
-    double fillPrice;
-    int64_t timestamp;
-};
+// Using OrderRequest and OrderResponse from IExchangeAdapter.hpp
 
 class ExecutionEngine {
 public:

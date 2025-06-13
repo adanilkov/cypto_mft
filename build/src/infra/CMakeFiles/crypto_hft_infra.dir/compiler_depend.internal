@@ -370,6 +370,38 @@ src/infra/CMakeFiles/crypto_hft_infra.dir/ConfigManager.cpp.o
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h
  /usr/include/c++/13/bits/fstream.tcc
  /usr/include/c++/13/iostream
+ /usr/include/spdlog/spdlog.h
+ /usr/include/spdlog/common.h
+ /usr/include/spdlog/tweakme.h
+ /usr/include/spdlog/details/null_mutex.h
+ /usr/include/c++/13/chrono
+ /usr/include/c++/13/bits/chrono_io.h
+ /usr/include/c++/13/format
+ /usr/include/c++/13/charconv
+ /usr/include/c++/13/optional
+ /usr/include/c++/13/span
+ /usr/include/c++/13/variant
+ /usr/include/spdlog/fmt/fmt.h
+ /usr/include/fmt/core.h
+ /usr/include/c++/13/cstring
+ /usr/include/string.h
+ /usr/include/strings.h
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h
+ /usr/include/fmt/format.h
+ /usr/include/fmt/core.h
+ /usr/include/spdlog/details/registry.h
+ /usr/include/c++/13/mutex
+ /usr/include/c++/13/bits/unique_lock.h
+ /usr/include/spdlog/logger.h
+ /usr/include/spdlog/details/log_msg.h
+ /usr/include/spdlog/details/backtracer.h
+ /usr/include/spdlog/details/log_msg_buffer.h
+ /usr/include/spdlog/details/circular_q.h
+ /usr/include/c++/13/cassert
+ /usr/include/assert.h
+ /usr/include/spdlog/version.h
+ /usr/include/spdlog/details/synchronous_factory.h
 
 src/infra/CMakeFiles/crypto_hft_infra.dir/Logger.cpp.o
  /home/adanilkovas/projects/crypto/crypto-hft/src/infra/Logger.cpp

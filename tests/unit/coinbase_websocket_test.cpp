@@ -12,7 +12,7 @@ using namespace crypto_hft;
 class CoinbaseWebSocketTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        adapter_ = std::make_unique<CoinbaseAdapter>("../tests/unit/test_config.yaml");
+        adapter_ = std::make_unique<CoinbaseAdapter>();
         
         // Set up message callback
         adapter_->registerOrderBookCallback([this](const OrderBookSnapshot& snapshot) {
@@ -44,15 +44,15 @@ TEST_F(CoinbaseWebSocketTest, BasicConnectionAndSubscription) {
     ASSERT_TRUE(adapter_->connect()) << "Failed to connect to Coinbase";
     EXPECT_TRUE(adapter_->isConnected()) << "Connection status is false after connect()";
 
-    // Subscribe to BTC-USD ticker
+    // Subscribe to BTC-USD
     std::vector<std::string> symbols = {"BTC-USD"};
     ASSERT_TRUE(adapter_->subscribe(symbols)) << "Failed to subscribe to BTC-USD";
 
-    std::cout << "Waiting for ticker data (timeout: 10 seconds)..." << std::endl;
+    std::cout << "Waiting for data (timeout: 1 second)..." << std::endl;
 
     // Wait for some messages (up to 10 seconds)
     std::unique_lock<std::mutex> lock(callback_mutex_);
-    bool received = cv_.wait_for(lock, std::chrono::seconds(10), 
+    bool received = cv_.wait_for(lock, std::chrono::seconds(1), 
         [this]() { return message_received_.load(); });
 
     EXPECT_TRUE(received) << "No ticker messages received within timeout period";

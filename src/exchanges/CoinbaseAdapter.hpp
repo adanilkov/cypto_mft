@@ -46,7 +46,7 @@ using ExecutionHandler = std::function<void(const OrderResponse&)>;
 
 class CoinbaseAdapter : public IExchangeAdapter {
 public:
-    CoinbaseAdapter(const std::string& config_path);
+    CoinbaseAdapter();
     ~CoinbaseAdapter() override;
 
     // Prevent copying
@@ -88,7 +88,7 @@ private:
     void handle_error_message(const json& data);
     void initialize_logger();
     void load_config(const std::string& config_path);
-    void validate_config() const;
+    // void validate_config() const;
     void do_read();
     void do_write(const std::string& message);
 
@@ -109,6 +109,7 @@ private:
     ExecutionHandler execution_callback_;
     std::atomic<bool> running_{false};
     std::atomic<bool> connected_{false};
+    std::atomic<bool> authenticated_ = false;  // Track authentication state
     std::string api_key_;
     std::string api_secret_;
     std::string base_url_;
