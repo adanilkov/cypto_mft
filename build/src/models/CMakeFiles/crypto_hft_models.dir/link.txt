@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcrypto_hft_models.a CMakeFiles/crypto_hft_models.dir/SignalGenerator.cpp.o
-/usr/bin/ranlib libcrypto_hft_models.a

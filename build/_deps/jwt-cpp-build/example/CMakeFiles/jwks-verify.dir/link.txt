@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -DNDEBUG -O1 CMakeFiles/jwks-verify.dir/jwks-verify.cpp.o -o jwks-verify  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

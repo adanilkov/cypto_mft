@@ -1,3 +1,0 @@
-repository='external project URL'
-module='https://github.com/Thalhammer/jwt-cpp/archive/refs/tags/v0.7.1.tar.gz'
-tag=''

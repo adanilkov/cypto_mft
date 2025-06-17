@@ -1,3 +1,0 @@
-repository='https://github.com/cameron314/concurrentqueue.git'
-module=''
-tag='origin'

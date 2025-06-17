@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -DNDEBUG -O1 CMakeFiles/private-claims.dir/private-claims.cpp.o -o private-claims  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

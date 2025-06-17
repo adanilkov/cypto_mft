@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -DNDEBUG -O1 CMakeFiles/print-claims.dir/print-claims.cpp.o -o print-claims  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

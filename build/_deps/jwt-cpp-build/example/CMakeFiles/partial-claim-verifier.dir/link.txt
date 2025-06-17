@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -DNDEBUG -O1 CMakeFiles/partial-claim-verifier.dir/partial-claim-verifier.cpp.o -o partial-claim-verifier  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

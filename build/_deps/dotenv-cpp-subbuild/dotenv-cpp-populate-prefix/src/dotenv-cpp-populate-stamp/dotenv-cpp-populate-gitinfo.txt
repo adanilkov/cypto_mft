@@ -1,3 +1,0 @@
-repository='https://github.com/therecipe/dotenv.git'
-module=''
-tag='origin'
